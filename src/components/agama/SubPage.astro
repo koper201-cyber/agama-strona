@@ -46,7 +46,9 @@ const offer = page.template === "oferta";
           alt={page.alt}
           widths={[480, 960]}
           sizes="(max-width: 900px) 100vw, 50vw"
-          class="ag-photo"
+          class={
+            page.slug === "mandale" ? "ag-photo ag-photo-natural" : "ag-photo"
+          }
         />
       )}
     </div>
@@ -111,6 +113,7 @@ const offer = page.template === "oferta";
         "wrap",
         "ag-gallery",
         { "ag-gallery-big": gallery, "ag-round": page.shape === "koła" },
+        { "ag-square": page.slug === "mandale" },
       ]}
     >
       {page.images.map((g) => (

@@ -328,10 +328,12 @@ pages:
   - slug: "mandale"
     title: "Mandale"
     template: "galeria"
-    shape: "koła"
+    shape: "prostokąty"
     eyebrow: "Agama Mandale"
     heading: "Od środka *na zewnątrz*."
     lead: "Zmiana zaczyna się w Tobie."
+    image: "agnieszka-z-mandalami.jpg"
+    alt: "Uśmiechnięta Agnieszka przy kolorowych mandalach na sztalugach i zapalonych świecach"
     images:
       - image: "mandala-mietowa.jpg"
         alt: "Miętowo-biała mandala w ogrodzie"
@@ -472,9 +474,13 @@ Skontaktuj się ze mną i porozmawiajmy o tym, czego potrzebujesz, aby zrobić k
 
 # Mandale
 
-Tworzenie mandali stało się dla mnie czymś więcej niż pasją. To właśnie wtedy zaczęłam dostrzegać, jak praca twórcza może inspirować do zmian, pomagać zatrzymać się, zajrzeć w głąb siebie i na nowo uporządkować własny wewnętrzny świat.
+Tworzenie mandali jest dla mnie czymś znacznie więcej niż pasją. Uwielbiam tworzyć, a każda mandala to dla mnie wyjątkowy czas – chwila zatrzymania, uważności i spotkania z samą sobą. W ciszy, poprzez kolory i kształty, odnajduję przestrzeń do odkrywania siebie.
 
-Dziś mandale są dla mnie nie tylko formą artystycznej ekspresji, ale również zaproszeniem do świadomej pracy nad sobą — do chwili uważności, spotkania ze sobą i odkrywania tego, co naprawdę jest dla Ciebie ważne.
+Odkąd zaczęłam tworzyć mandale, mój świat zaczął się porządkować. Zrozumiałam, że tak jak mandalę tworzymy od środka na zewnątrz, tak samo wewnętrzne zmiany stopniowo znajdują odzwierciedlenie w naszym zewnętrznym świecie. To, co zaczęło się zmieniać we mnie – mój sposób myślenia, odczuwania i postrzegania rzeczywistości – zaczęło wpływać na moje decyzje, relacje i codzienne życie.
+
+Dziś mandale są dla mnie nie tylko formą artystycznej ekspresji, ale także pięknym przypomnieniem, że prawdziwa zmiana zaczyna się w nas.
+
+Zapraszam Cię do tej drogi. Do zatrzymania się, wsłuchania w siebie i odkrywania tego, co naprawdę jest dla Ciebie ważne. Do tworzenia z intencją, uważnością i otwartością na zmiany, które zaczynają się w Twoim wnętrzu, a z czasem rozkwitają również na zewnątrz.
 
 # Polityka prywatności
 
