@@ -132,11 +132,11 @@ Treść polityki.
 ## 8. Proces edycji z telefonu (właściciel)
 1. Otwórz aplikację Claude (Code) lub ChatGPT (Codex) i wybierz repo strony.
 2. Napisz, co zmienić, np.: „Dodaj warsztat 14 lutego o 18:00 w Poznaniu, cena 150 zł”.
-3. Agent redaguje zgłoszenie własnymi słowami jako user story („Jako…, chcę…, aby…”). Jeśli nie jest ustalona, pyta prostym językiem o brakujące elementy. Nie wymyśla celu ani korzyści.
-4. Agent zapisuje **issue** z user story i kryteriami akceptacji oraz podaje link; wskazane istniejące issue wykorzystuje ponownie. Gdy nie ma dostępu do GitHub, pozostawia jawnie niezapisany szkic i wstrzymuje wdrożenie. Pełne reguły: sekcja 10 `AGENTS.md`.
-5. Jeśli właściciel zlecił realizację (w pierwszej prośbie albo później, np. „wdrażaj issue #…”), agent edytuje `site.md` (i ewentualnie `zdjecia/`), uruchamia walidację i build, tworzy **pull request**. W opisie PR podaje link do issue, co zmienił, i **link do podglądu**. Samo „zapisz na potem” nie uruchamia wdrożenia.
+3. Jasna prośba w rozmowie wystarcza do rozpoczęcia pracy. Agent krótko zapisuje cel i zakres; dopytuje tylko o brakujące informacje potrzebne do wykonania zmiany.
+4. Agent **nie tworzy zgłoszeń GitHub ani nie pyta o zgodę na ich utworzenie**, chyba że użytkownik wyraźnie prosi o zgłoszenie. Brak issue nie blokuje zmiany. Pełne reguły: sekcja 10 `AGENTS.md`.
+5. Na zlecenie właściciela agent edytuje `site.md` (i ewentualnie `zdjecia/`), tworzy **pull request** i przygotowuje sprawdzony podgląd zgodnie z `AGENTS.md`. W opisie PR podaje co zmienił i **link do podglądu**; issue nie jest wymagane. Samo „zapisz na potem” nie uruchamia wdrożenia.
 6. Cloudflare buduje podgląd (link także w komentarzu pod PR).
-7. Właściciel ogląda podgląd na telefonie. Jeśli coś nie tak — pisze agentowi poprawkę w tym samym zadaniu, powiązaną z tym samym issue.
+7. Właściciel ogląda podgląd na telefonie. Jeśli coś nie tak — pisze agentowi poprawkę w tym samym zadaniu, bez potrzeby tworzenia issue.
 8. Akceptacja = **Merge** PR (aplikacja GitHub lub github.com). Cloudflare publikuje w 1–2 min.
 9. **Cofnięcie:** na scalonym PR przycisk **Revert** → nowy PR z podglądem → Merge. Awaryjnie (wykonawca): rollback do poprzedniego wdrożenia w panelu Cloudflare.
 
@@ -158,7 +158,7 @@ Zasady:
 - `AGENTS.md` + `CLAUDE.md` (sekcja 10).
 
 ## 10. `AGENTS.md` — zasady dla agenta (skrót)
-- Zgłoszenia z telefonu: user story i issue przed implementacją, zgodnie z sekcją 10 `AGENTS.md`; `CLAUDE.md` wczytuje tę zasadę przez `@AGENTS.md`.
+- Prośby z telefonu: jasne polecenie w rozmowie wystarcza, bez wymagania user story i issue, zgodnie z sekcją 10 `AGENTS.md`; `CLAUDE.md` wczytuje tę zasadę przez `@AGENTS.md`.
 - Zwykłe zmiany treści: edytuj **tylko** `site.md` i `zdjecia/`. Zmiany w `src/`, konfiguracji, zależnościach — tylko na wyraźną prośbę i z wyjaśnieniem w PR.
 - Przed PR zawsze: `npm run site:validate` i `npm run build`; nie twórz PR z błędami.
 - Zawsze przez gałąź i PR, nigdy bezpośrednio na `main`. Nazwa gałęzi krótka, bez polskich znaków (np. `warsztat-luty`).
