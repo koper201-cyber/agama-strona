@@ -324,7 +324,7 @@ pages:
     image: "coaching-sesja.jpg"
     alt: "Rozmowa coachingowa przy stoliku"
     images:
-      - image: "coaching-rozmowa.jpg"
+      - image: "coaching-rozmowa-fotele.jpg"
         alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
     quote: "Zrób miejsce na *zmianę*."
     button_label: "Umów rozmowę"
