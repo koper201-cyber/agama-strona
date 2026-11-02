@@ -323,6 +323,9 @@ pages:
     # Zdjęcie tymczasowe — Agnieszka wymieni je po sesji z fotografem.
     image: "coaching-sesja.jpg"
     alt: "Rozmowa coachingowa przy stoliku"
+    images:
+      - image: "coaching-rozmowa.jpg"
+        alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
     quote: "Zrób miejsce na *zmianę*."
     button_label: "Umów rozmowę"
     button_link: "/#kontakt"
