@@ -317,7 +317,7 @@ pages:
     title: "Coaching"
     template: "tekstowa"
     eyebrow: "Indywidualny i biznesowy"
-    heading: "Coaching – odkryj możliwości. Wybierz kierunek. Działaj świadomie."
+    heading: "Odkryj możliwości. *Działaj świadomie.*"
     lead: "Czasem nie potrzebujesz gotowych odpowiedzi. Potrzebujesz przestrzeni, by odnaleźć własne."
     image: "coaching-rozmowa-fotele.jpg"
     alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"

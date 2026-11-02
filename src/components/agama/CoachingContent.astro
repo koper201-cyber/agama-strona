@@ -1,0 +1,52 @@
+---
+import Photo from "../Photo.astro";
+import type { Page } from "../../lib/site-schema";
+
+interface Props {
+  page: Page;
+  dir: string;
+  body?: string;
+}
+
+const { page, dir, body = "" } = Astro.props;
+// HTML pochodzi z istniejącej sanitizacji site.md; nagłówki h2 dzielą jego sekcje.
+const [intro = "", ...sections] = body.split(/(?=<h2>)/);
+const columnHeadings = new Set(["Coaching indywidualny", "Coaching biznesowy"]);
+const isColumn = (section: string) =>
+  columnHeadings.has(section.match(/^<h2>(.*?)<\/h2>/)?.[1] ?? "");
+---
+
+{(intro.trim() || page.image) && (
+  <section class="section ag-coaching-intro">
+    <div class:list={["wrap", page.image ? "ag-split" : "narrow"]}>
+      {intro.trim() && <div class="prose ag-prose" set:html={intro} />}
+      {page.image && (
+        <Photo
+          dir={dir}
+          name={page.image}
+          alt={page.alt}
+          widths={[480, 960]}
+          sizes="(max-width: 900px) 100vw, 50vw"
+          class="ag-photo"
+        />
+      )}
+    </div>
+  </section>
+)}
+
+{sections.length > 0 && (
+  <section class="section">
+    <div class="wrap ag-coaching-grid">
+      {sections.map((section) => (
+        <section
+          class:list={[
+            "prose",
+            "ag-prose",
+            isColumn(section) ? "ag-coaching-column" : "ag-coaching-wide",
+          ]}
+          set:html={section}
+        />
+      ))}
+    </div>
+  </section>
+)}
