@@ -33,3 +33,9 @@ Test odrzucenia i publikacji zmiany treści nie został wykonany w tym przebiegu
 - Konfigurator: https://chatgpt.com/local/01a19c66-6c8d-7759-9e3c-8cfe9d27605b?hostId=local
 - Dalej: po ustąpieniu błędu usługi ponowić publikację, potwierdzić obecność agama na liście środowisk nowego czatu i wykonać osobny test pracy z telefonu. Nie kupowano kredytów ani nie resetowano limitu.
 - Przygotowano PR z poprawką pages_project oraz dokumentacją. Nie scalano zmian ani nie publikowano nowej wersji strony. Aktualny SHA i link PR zapisane w opisie PR i zgłoszeniu.
+
+## Uzupełnienie po weryfikacji PR
+- PR: https://github.com/koper201-cyber/agama-strona/pull/6; sprawdzony SHA 0af7f72ed29b207598b197709878521a983262fd.
+- Wszystkie kontrole tego SHA zakończyły się sukcesem: Sprawdzenie strony, pięć wariantów Przeglądarka oraz Cloudflare Pages.
+- Preview URL z checku Cloudflare: https://4ef7558a.agama-strona.pages.dev/ — curl potwierdził HTTP 200 i treść AGAMA dla /, /aktualnosci/, /coaching/. Python urllib wcześniej otrzymał 403; curl poprawnie odczytał strony bez zmiany zabezpieczeń.
+- Aktualizacja właściciela o regułę dokumentowania: issue #7, log 2026-11-02-dokumentowanie-agentow.md. Zmiany instrukcji nie obowiązują jeszcze na main, dopóki PR nie zostanie zatwierdzony i scalony.

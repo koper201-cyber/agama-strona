@@ -19,3 +19,11 @@ Nowy czat Codex → Chmura → środowisko `agama`. Zmiany przez issue, gałąź
 ## Ograniczenia sprawdzenia
 
 Nie wykonywano zmian treści, odrzucenia PR, scalania ani próbnego wysłania formularza. Pełny proces pracy z telefonu wymaga osobnego testu. `main` nie ma aktywnej ochrony (API protected=false, rulesets puste na 2026-11-02); przed przekazaniem Agnieszce skonfigurować zasady z README. Dane oznaczone UZUPEŁNIJ pozostają do potwierdzenia przez właścicielkę.
+
+## Próba z telefonu Błażeja
+
+Oglądanie strony można sprawdzić już teraz pod adresem podglądu w PR #6. Pełny test edycji wymaga najpierw skutecznego opublikowania środowiska i widoczności `agama` w wyborze środowisk na koncie Błażeja. Obecnie publikacja jest zablokowana. Przed testem sprawdzić aktualny main: instrukcje i poprawka ustawienia podglądów z otwartego PR nie są jeszcze na nim obecne.
+
+Po odblokowaniu: na telefonie otworzyć Codex na tym samym koncie, wybrać Chmura → agama → agama-strona/main i zlecić jedną uzgodnioną, odwracalną zmianę tekstu. Przykładowa treść polecenia (szablon, nie zlecenie zmiany): „Test z telefonu: na stronie [podstrona], w sekcji [sekcja], zamień dokładnie [stary tekst] na [nowy tekst]. Przygotuj PR i sprawdzony podgląd, nie publikuj strony”.
+
+Agent zapisuje issue, przygotowuje PR i pokazuje podgląd konkretnego SHA. Błażej sprawdza go na telefonie, następnie odrzuca test albo zatwierdza konkretną wersję zgodnie z AGENTS.md. Wyniki przygotowania, podglądu, odrzucenia i publikacji zapisuje się osobno; żadnego z tych testów z telefonu jeszcze nie przeprowadzono.
