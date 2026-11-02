@@ -44,14 +44,14 @@ npm run verify          # format, lint, typy, testy, walidacja, build
 
 ## Zabezpieczenia — czy strony nie da się skasować?
 
-| Ryzyko | Zabezpieczenie |
-| --- | --- |
-| Agent usuwa treść albo psuje stronę | Nic nie trafia na stronę bez PR, podglądu i zatwierdzenia. Zasady agenta zabraniają usuwania bez wyraźnej prośby. Każdą zmianę cofa **Revert**; cała historia zostaje w Git. |
-| Agent kasuje repo, `main` albo zdejmuje ochronę | Aplikacje agentów (Claude, Codex) dostają do „administration” najwyżej odczyt — sprawdzić przy instalacji. |
+| Ryzyko                                          | Zabezpieczenie                                                                                                                                                                                                                                  |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Agent usuwa treść albo psuje stronę             | Nic nie trafia na stronę bez PR, podglądu i zatwierdzenia. Zasady agenta zabraniają usuwania bez wyraźnej prośby. Każdą zmianę cofa **Revert**; cała historia zostaje w Git.                                                                    |
+| Agent kasuje repo, `main` albo zdejmuje ochronę | Aplikacje agentów (Claude, Codex) dostają do „administration” najwyżej odczyt — sprawdzić przy instalacji.                                                                                                                                      |
 | Agent zmienia pliki techniczne lub swoje zasady | `.github/CODEOWNERS`: zmiany w `.github/`, `scripts/`, `src/lib/`, `src/pages/`, `tests/`, `AGENTS.md` itp. wymagają zatwierdzenia Błażeja. Treść i wygląd (`site.md`, `zdjecia/`, `agama.css`, `components/agama/`) Agnieszka zatwierdza sama. |
-| Ktoś nadpisuje lub kasuje `main` | Ruleset na `main` (niżej), bez listy wyjątków. |
-| Agnieszka kasuje repo | Niemożliwe — jako współpracowniczka (Write) nie ma uprawnień do usunięcia ani ustawień. |
-| Utrata projektu Cloudflare | Strona buduje się z repo — nowy projekt Pages podłączony do repo odtwarza ją w kilka minut. |
+| Ktoś nadpisuje lub kasuje `main`                | Ruleset na `main` (niżej), bez listy wyjątków.                                                                                                                                                                                                  |
+| Agnieszka kasuje repo                           | Niemożliwe — jako współpracowniczka (Write) nie ma uprawnień do usunięcia ani ustawień.                                                                                                                                                         |
+| Utrata projektu Cloudflare                      | Strona buduje się z repo — nowy projekt Pages podłączony do repo odtwarza ją w kilka minut.                                                                                                                                                     |
 
 ### Ruleset dla `main` (Settings → Rules → Rulesets → New branch ruleset)
 
