@@ -216,7 +216,7 @@ html[data-theme="agama"] {
 }
 .ag-hero-visual picture {
   width: 72%;
-  height: 84%;
+  height: 72%;
   position: relative;
 }
 .ag-arch {
@@ -224,7 +224,7 @@ html[data-theme="agama"] {
   height: 100%;
   object-fit: cover;
   object-position: 50% 20%;
-  border-radius: 999px 999px 18px 18px;
+  border-radius: 0;
   box-shadow: var(--shadow);
 }
 .ag-badge {
