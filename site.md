@@ -39,7 +39,7 @@ hero:
   heading: "Nie tylko inspiruję do *zmiany*."
   subheading: "Pomagam odkrywać, od czego ją zacząć."
   text: "Wspieram ludzi i organizacje w odkrywaniu potencjału, rozwijaniu kompetencji i wprowadzaniu zmian, które mają znaczenie."
-  cta_label: "Oferta dla firm"
+  cta_label: "Oferta dla firm!"
   cta_link: "#oferta"
   cta2_label: "Porozmawiajmy"
   cta2_link: "#kontakt"
