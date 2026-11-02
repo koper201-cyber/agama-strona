@@ -1,6 +1,6 @@
 # AGAMA w Codex Cloud
 
-**Stan 2026-11-02: wersja robocza zapisana, publikacja zablokowana błędem usługi po dwóch próbach. Środowisko nie jest jeszcze potwierdzone jako dostępne w nowych czatach.**
+**Stan 2026-11-02: wersja robocza zapisana, publikacja zablokowana błędem usługi po trzech próbach. Środowisko nie jest jeszcze potwierdzone jako dostępne w nowych czatach.**
 
 - Nazwa środowiska: `agama` (decyzja Błażeja 2026-11-02).
 - Repozytorium: `koper201-cyber/agama-strona`, gałąź początkowa `main`. `agama-mockup` to archiwum — nie używać do nowych zmian strony.
@@ -27,3 +27,5 @@ Oglądanie strony można sprawdzić już teraz pod adresem podglądu w PR #6. Pe
 Po odblokowaniu: na telefonie otworzyć Codex na tym samym koncie, wybrać Chmura → agama → agama-strona/main i zlecić jedną uzgodnioną, odwracalną zmianę tekstu. Przykładowa treść polecenia (szablon, nie zlecenie zmiany): „Test z telefonu: na stronie [podstrona], w sekcji [sekcja], zamień dokładnie [stary tekst] na [nowy tekst]. Przygotuj PR i sprawdzony podgląd, nie publikuj strony”.
 
 Agent zapisuje issue, przygotowuje PR i pokazuje podgląd konkretnego SHA. Błażej sprawdza go na telefonie, następnie odrzuca test albo zatwierdza konkretną wersję zgodnie z AGENTS.md. Wyniki przygotowania, podglądu, odrzucenia i publikacji zapisuje się osobno; żadnego z tych testów z telefonu jeszcze nie przeprowadzono.
+
+Ponowne sprawdzenie na prośbę właściciela: trzecia próba publikacji również zakończyła się błędem; szczegóły w `.ai/runs/2026-11-02-powtorna-publikacja-chmury.md`.
