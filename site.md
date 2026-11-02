@@ -8,7 +8,7 @@ site:
   footer_text: "Motywacja, szkolenia i coaching. Świadomość. Kompetencje. Realna zmiana."
   type: "Person"
   domain: ""
-  pages_project: "agama-mockup"
+  pages_project: "agama-strona"
   language: "pl"
   city: "Poznań"
   theme: "agama"
