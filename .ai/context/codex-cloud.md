@@ -14,7 +14,7 @@
 
 ## Praca z telefonu
 
-Nowy czat Codex → Chmura → środowisko `agama`. Zmiany przez issue, gałąź, PR i sprawdzony podgląd z Cloudflare, zgodnie z aktualnym `AGENTS.md`. Użytkownik zatwierdza konkretną wersję przed publikacją strony. Publikacja środowiska Codex jest odrębna od publikacji strony.
+Nowy czat Codex → Chmura → środowisko `agama`. Jasna prośba w rozmowie wystarcza do rozpoczęcia zmiany. Nie twórz zgłoszeń GitHub ani nie pytaj o zgodę na ich tworzenie, chyba że użytkownik wyraźnie prosi o zgłoszenie. Zmiany przez gałąź, PR i sprawdzony podgląd z Cloudflare, zgodnie z aktualnym `AGENTS.md`. Użytkownik zatwierdza konkretną wersję przed publikacją strony. Publikacja środowiska Codex jest odrębna od publikacji strony.
 
 ## Ograniczenia sprawdzenia
 
@@ -26,6 +26,6 @@ Oglądanie strony można sprawdzić już teraz pod adresem podglądu w PR #6. Pe
 
 Po odblokowaniu: na telefonie otworzyć Codex na tym samym koncie, wybrać Chmura → agama → agama-strona/main i zlecić jedną uzgodnioną, odwracalną zmianę tekstu. Przykładowa treść polecenia (szablon, nie zlecenie zmiany): „Test z telefonu: na stronie [podstrona], w sekcji [sekcja], zamień dokładnie [stary tekst] na [nowy tekst]. Przygotuj PR i sprawdzony podgląd, nie publikuj strony”.
 
-Agent zapisuje issue, przygotowuje PR i pokazuje podgląd konkretnego SHA. Błażej sprawdza go na telefonie, następnie odrzuca test albo zatwierdza konkretną wersję zgodnie z AGENTS.md. Wyniki przygotowania, podglądu, odrzucenia i publikacji zapisuje się osobno; żadnego z tych testów z telefonu jeszcze nie przeprowadzono.
+Agent przygotowuje PR bez obowiązkowego issue i pokazuje podgląd konkretnego SHA. Błażej sprawdza go na telefonie, następnie odrzuca test albo zatwierdza konkretną wersję zgodnie z AGENTS.md. Wyniki przygotowania, podglądu, odrzucenia i publikacji zapisuje się osobno; żadnego z tych testów z telefonu jeszcze nie przeprowadzono.
 
 Ponowne sprawdzenie na prośbę właściciela: trzecia próba publikacji również zakończyła się błędem; szczegóły w `.ai/runs/2026-11-02-powtorna-publikacja-chmury.md`.
