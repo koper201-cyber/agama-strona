@@ -51,6 +51,7 @@ pillars:
   - "Świadomość"
   - "Kompetencje"
   - "Realna zmiana"
+  - "Harmonia"
 
 feature:
   eyebrow: "Aktualności"
