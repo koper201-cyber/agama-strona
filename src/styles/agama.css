@@ -460,10 +460,6 @@ html[data-theme="agama"] {
   object-fit: cover;
   border-radius: 10px;
 }
-.ag-gallery .ag-coaching-photo {
-  aspect-ratio: auto;
-  height: auto;
-}
 .ag-gallery-big {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
@@ -669,10 +665,6 @@ html[data-theme="agama"] {
   .ag-cards,
   .ag-posts,
   .ag-gallery,
-  .ag-gallery .ag-coaching-photo {
-    aspect-ratio: auto;
-    height: auto;
-  }
   .ag-gallery-big {
     grid-template-columns: 1fr 1fr;
   }

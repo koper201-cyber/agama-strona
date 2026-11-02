@@ -320,12 +320,8 @@ pages:
     eyebrow: "Indywidualny i biznesowy"
     heading: "Odkryj możliwości. *Działaj świadomie.*"
     lead: "Czasem nie potrzebujesz gotowych odpowiedzi. Potrzebujesz przestrzeni, by odnaleźć własne."
-    # Zdjęcie tymczasowe — Agnieszka wymieni je po sesji z fotografem.
-    image: "coaching-sesja.jpg"
-    alt: "Rozmowa coachingowa przy stoliku"
-    images:
-      - image: "coaching-rozmowa-fotele.jpg"
-        alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
+    image: "coaching-rozmowa-fotele.jpg"
+    alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
     quote: "Zrób miejsce na *zmianę*."
     button_label: "Umów rozmowę"
     button_link: "/#kontakt"
