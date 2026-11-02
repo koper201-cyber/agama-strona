@@ -37,7 +37,7 @@ const offer = page.template === "oferta";
 </section>
 
 {page.slug === "coaching" && (
-  <CoachingContent page={page} dir={dir} body={body} />
+  <CoachingContent page={page} dir={dir} body={body ?? ""} />
 )}
 
 {page.slug !== "coaching" && (body || page.image) && (
