@@ -185,6 +185,9 @@ html[data-theme="agama"] {
   display: grid;
   place-items: center;
 }
+.ag-hero-visual .ag-dots {
+  display: none;
+}
 .ag-dots {
   position: absolute;
   inset: 0;
