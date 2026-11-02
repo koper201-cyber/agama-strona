@@ -22,7 +22,7 @@ Nie wykonywano zmian treści, odrzucenia PR, scalania ani próbnego wysłania fo
 
 ## Próba z telefonu Błażeja
 
-Oglądanie strony można sprawdzić już teraz pod adresem podglądu w PR #6. Pełny test edycji wymaga najpierw skutecznego opublikowania środowiska i widoczności `agama` w wyborze środowisk na koncie Błażeja. Obecnie publikacja jest zablokowana. Przed testem sprawdzić aktualny main: instrukcje i poprawka ustawienia podglądów z otwartego PR nie są jeszcze na nim obecne.
+Oglądanie strony można sprawdzić już teraz pod adresem podglądu w PR #6. Pełny test edycji wymaga najpierw skutecznego opublikowania środowiska i widoczności `agama` w wyborze środowisk na koncie Błażeja. Obecnie publikacja jest zablokowana. PR #6 scalony na polecenie Błażeja: instrukcje i poprawka ustawienia podglądów są obecne na main od e64c8cdad2a170d257172676bcc3f96fd5ccf9d5. Przed testem odświeżyć repo w zadaniu.
 
 Po odblokowaniu: na telefonie otworzyć Codex na tym samym koncie, wybrać Chmura → agama → agama-strona/main i zlecić jedną uzgodnioną, odwracalną zmianę tekstu. Przykładowa treść polecenia (szablon, nie zlecenie zmiany): „Test z telefonu: na stronie [podstrona], w sekcji [sekcja], zamień dokładnie [stary tekst] na [nowy tekst]. Przygotuj PR i sprawdzony podgląd, nie publikuj strony”.
 
