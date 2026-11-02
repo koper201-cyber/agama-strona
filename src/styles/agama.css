@@ -469,6 +469,10 @@ html[data-theme="agama"] {
   border-radius: 50%;
   box-shadow: var(--shadow);
 }
+.ag-square img {
+  aspect-ratio: 1;
+  border-radius: 0;
+}
 
 /* Podstrony */
 .ag-subhero {
@@ -487,6 +491,10 @@ html[data-theme="agama"] {
 }
 .ag-photo {
   aspect-ratio: 3 / 2;
+}
+.ag-photo-natural {
+  aspect-ratio: auto;
+  height: auto;
 }
 .ag-list {
   list-style: none;
