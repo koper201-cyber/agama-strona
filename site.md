@@ -37,7 +37,7 @@ contact:
 hero:
   eyebrow: "AGAMA · motywacja, szkolenia i coaching"
   heading: "Nie tylko inspiruję do *zmiany*."
-  subheading: "Pomagam odkrywać, od czego ją zacząć."
+  subheading: "Pomagam odkrywać, od czego ją zacząć. Teraz!"
   text: "Wspieram ludzi i organizacje w odkrywaniu potencjału, rozwijaniu kompetencji i wprowadzaniu zmian, które mają znaczenie."
   cta_label: "Oferta dla firm"
   cta_link: "#oferta"
