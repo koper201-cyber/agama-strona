@@ -1,0 +1,45 @@
+---
+/** Zdjęcie z folderu zdjecia/ — automatycznie AVIF/WebP w kilku rozmiarach. */
+import { Picture } from "astro:assets";
+import { resolveImage } from "../lib/images";
+
+interface Props {
+  dir: string;
+  name?: string | undefined;
+  alt?: string | undefined;
+  widths?: number[] | undefined;
+  sizes?: string | undefined;
+  eager?: boolean | undefined;
+  fallbackFormat?: "webp" | undefined;
+  class?: string | undefined;
+}
+const {
+  dir,
+  name,
+  alt = "",
+  widths = [400, 800, 1200],
+  sizes = "(max-width: 700px) 100vw, 600px",
+  eager = false,
+  fallbackFormat,
+  class: cls,
+} = Astro.props;
+const src = resolveImage(dir, name);
+---
+
+{src && (
+  <Picture
+    src={src}
+    alt={alt}
+    formats={["avif", "webp"]}
+    {...(fallbackFormat ? { fallbackFormat } : {})}
+    widths={
+      widths.filter((w) => w <= src.width).length
+        ? widths.filter((w) => w <= src.width)
+        : [src.width]
+    }
+    sizes={sizes}
+    loading={eager ? "eager" : "lazy"}
+    fetchpriority={eager ? "high" : "auto"}
+    class={cls}
+  />
+)}

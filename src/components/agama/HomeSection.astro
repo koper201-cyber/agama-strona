@@ -1,0 +1,87 @@
+---
+/** Sekcja strony głównej z site.md (home_sections): lista, duet albo galeria. */
+import Photo from "../Photo.astro";
+import { accentHtml } from "../../lib/accent";
+import type { SiteData } from "../../lib/site-schema";
+
+interface Props {
+  section: SiteData["home_sections"][number];
+  dir: string;
+}
+const { section: s, dir } = Astro.props;
+const headingId = `${s.id}-h`;
+---
+
+<section
+  id={s.id}
+  class:list={["section", { "ag-band": s.kind === "galeria" }]}
+  aria-labelledby={headingId}
+>
+  <div class="wrap">
+    {s.banner && (
+      <Photo
+        dir={dir}
+        name={s.banner}
+        alt={s.banner_alt ?? ""}
+        widths={[800, 1400]}
+        sizes="(max-width: 1200px) 100vw, 1180px"
+        class="ag-banner"
+      />
+    )}
+    <div class="ag-split">
+      {s.kind === "duet" && s.image && (
+        <Photo
+          dir={dir}
+          name={s.image}
+          alt={s.alt ?? ""}
+          widths={[480, 960]}
+          sizes="(max-width: 900px) 100vw, 50vw"
+          class="ag-photo"
+        />
+      )}
+      <div>
+        {s.eyebrow && <p class="ag-eyebrow">{s.eyebrow}</p>}
+        <h2 id={headingId} set:html={accentHtml(s.heading)} />
+        {s.text && <p>{s.text}</p>}
+        {s.kind === "duet" && s.items.length > 0 && (
+          <ul class="ag-duo">
+            {s.items.map((item) => (
+              <li>
+                <h3>{item.title}</h3>
+                {item.text && <p>{item.text}</p>}
+              </li>
+            ))}
+          </ul>
+        )}
+        {s.note && <p class="ag-note">{s.note}</p>}
+        {s.button_label && s.button_link && (
+          <a class="btn btn-ghost" href={s.button_link}>
+            {s.button_label}
+          </a>
+        )}
+      </div>
+      {s.kind === "lista" && s.items.length > 0 && (
+        <ol class="ag-numbers">
+          {s.items.map((item) => (
+            <li>{item.title}</li>
+          ))}
+        </ol>
+      )}
+      {s.kind === "galeria" && s.images.length > 0 && (
+        <ul class="ag-mandalas">
+          {s.images.map((g) => (
+            <li>
+              <Photo
+                dir={dir}
+                name={g.image}
+                alt={g.alt}
+                widths={[240, 480]}
+                sizes="(max-width: 900px) 30vw, 180px"
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</section>

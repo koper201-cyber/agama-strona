@@ -1,0 +1,90 @@
+---
+/** Aktualności: nadchodzące wydarzenia, artykuły i archiwum minionych wydarzeń. */
+import NewsCard from "./NewsCard.astro";
+import { accentHtml } from "../../lib/accent";
+import { splitNews } from "../../lib/news";
+import type { Site } from "../../lib/load-site";
+
+interface Props {
+  site: Site;
+  today: string;
+}
+const { site, today } = Astro.props;
+const { data } = site;
+const dir = site.imagesDir;
+const np = data.news_page;
+const news = splitNews(data, today);
+---
+
+<section class="ag-subhero" aria-labelledby="strona-h">
+  <div class="wrap">
+    <p class="ag-crumb">
+      <a href="/">Strona główna</a> / {np.title}
+    </p>
+    <h1 id="strona-h" set:html={accentHtml(np.heading ?? np.title)} />
+    {np.lead && <p class="ag-lead">{np.lead}</p>}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="nadchodzace-h">
+  <div class="wrap">
+    {np.categories.length > 1 && (
+      <div class="ag-chips" role="group" aria-label="Pokaż kategorię">
+        <button type="button" data-filter="" aria-pressed="true" hidden>
+          Wszystkie
+        </button>
+        {np.categories.map((c) => (
+          <button type="button" data-filter={c} aria-pressed="false" hidden>
+            {c}
+          </button>
+        ))}
+      </div>
+    )}
+    <h2 id="nadchodzace-h">Najbliższe terminy</h2>
+    <ul class="ag-posts" data-events>
+      {news.upcoming.map((n) => (
+        <NewsCard item={n} dir={dir} />
+      ))}
+    </ul>
+    <p class="ag-empty" data-events-empty hidden={news.upcoming.length > 0}>
+      Nowe terminy pojawią się wkrótce.
+      {data.features.contact && (
+        <>
+          {" "}
+          <a href="/#kontakt">Napisz</a>, jeśli chcesz dostać informację jako
+          pierwsza osoba.
+        </>
+      )}
+    </p>
+  </div>
+</section>
+
+{news.articles.length > 0 && (
+  <section class="section ag-soft" aria-labelledby="artykuly-h">
+    <div class="wrap">
+      <h2 id="artykuly-h">Artykuły</h2>
+      <ul class="ag-posts">
+        {news.articles.map((n) => (
+          <NewsCard item={n} dir={dir} />
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+{news.archive.length > 0 && (
+  <section class="section" aria-labelledby="archiwum-h">
+    <div class="wrap">
+      <details class="ag-archive">
+        <summary>
+          <h2 id="archiwum-h">Archiwum ({news.archive.length})</h2>
+        </summary>
+        <ul class="ag-posts">
+          {news.archive.map((n) => (
+            <NewsCard item={n} dir={dir} archived />
+          ))}
+        </ul>
+      </details>
+    </div>
+  </section>
+)}

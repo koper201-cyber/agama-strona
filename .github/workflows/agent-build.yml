@@ -1,0 +1,74 @@
+name: Pomoc agenta (format, testy, zbudowana strona)
+
+# Dla gałęzi agentów (claude/**): formatuje kod Prettierem, uruchamia kontrole
+# i zapisuje raport oraz zbudowaną stronę na gałęzi "wyniki/<gałąź>".
+# Pozwala sprawdzić pracę, gdy agent nie ma dostępu do rejestru npm.
+on:
+  push:
+    branches: ["claude/**"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agent-build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ASTRO_TELEMETRY_DISABLED: "1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - name: Formatowanie
+        run: |
+          npx prettier --write . > /dev/null
+          if ! git diff --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -am "Formatowanie Prettier (automatycznie)"
+            git push
+          fi
+      - name: Kontrole
+        run: |
+          set +e
+          mkdir -p /tmp/wyniki
+          run() { echo "### $1" >> /tmp/wyniki/raport.md; echo '```' >> /tmp/wyniki/raport.md; shift; ( "$@" ) >> /tmp/wyniki/raport.md 2>&1; code=$?; echo '```' >> /tmp/wyniki/raport.md; echo "kod wyjścia: $code" >> /tmp/wyniki/raport.md; echo >> /tmp/wyniki/raport.md; }
+          echo "# Raport $(git rev-parse HEAD)" > /tmp/wyniki/raport.md
+          run "lint" npm run lint
+          run "typy (astro check)" npm run check
+          run "testy" npm test
+          run "walidacja site.md" npm run site:validate
+          run "build" npm run build
+          cp -r dist /tmp/wyniki/dist || true
+          run "walidacja agama.md" env SITE_FILE=tests/fixtures/agama.md npm run site:validate
+          run "build agama.md" env SITE_FILE=tests/fixtures/agama.md npm run build
+          cp -r dist /tmp/wyniki/dist-test || true
+          run "build demo" env SITE_FILE=examples/demo/site.md npm run build
+      - name: Testy przeglądarkowe
+        run: |
+          set +e
+          npx playwright install --with-deps chromium > /dev/null 2>&1
+          for f in site.md tests/fixtures/agama.md; do
+            echo "### e2e $f" >> /tmp/wyniki/raport.md; echo '```' >> /tmp/wyniki/raport.md
+            ( SITE_FILE=$f npm run build > /dev/null 2>&1 && SITE_FILE=$f npx playwright test --reporter=line ) >> /tmp/wyniki/raport.md 2>&1
+            echo "kod wyjścia: $?" >> /tmp/wyniki/raport.md; echo '```' >> /tmp/wyniki/raport.md
+          done
+      - name: Zapis wyników
+        if: always()
+        run: |
+          branch="wyniki/${GITHUB_REF_NAME}"
+          cd /tmp/wyniki
+          git init -q -b "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Wyniki dla ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" "$branch"

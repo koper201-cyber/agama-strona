@@ -1,0 +1,75 @@
+---
+/** Podstrony z site.md (pages) oraz strona Aktualności. */
+import Base from "../layouts/Base.astro";
+import SubPage from "../components/agama/SubPage.astro";
+import NewsPage from "../components/agama/NewsPage.astro";
+import { loadSite, todayInPoland } from "../lib/load-site";
+import { plainText } from "../lib/accent";
+import type { Page } from "../lib/site-schema";
+
+export function getStaticPaths() {
+  const { data } = loadSite();
+  const pages: { params: { slug: string }; props: { page?: Page } }[] =
+    data.pages.map((page) => ({
+      params: { slug: page.slug },
+      props: { page },
+    }));
+  if (data.features.news)
+    pages.push({ params: { slug: "aktualnosci" }, props: {} });
+  return pages;
+}
+
+interface Props {
+  page?: Page;
+}
+const { page } = Astro.props;
+const site = loadSite();
+const today = todayInPoland();
+const title = page ? page.title : site.data.news_page.title;
+const description = page?.lead ? plainText(page.lead) : undefined;
+---
+
+<Base
+  title={title}
+  description={description}
+  current={`/${Astro.params.slug}/`}
+>
+  {page ? (
+    <SubPage page={page} site={site} />
+  ) : (
+    <NewsPage site={site} today={today} />
+  )}
+</Base>
+
+<script>
+  // Wydarzenia po terminie znikają z listy nadchodzących także bez nowej publikacji.
+  const today = new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "Europe/Warsaw",
+  }).format(new Date());
+  const items = document.querySelectorAll<HTMLElement>(
+    "[data-events] [data-date]",
+  );
+  let visible = 0;
+  items.forEach((el) => {
+    if ((el.dataset.date ?? "") < today) el.hidden = true;
+    else visible++;
+  });
+  const empty = document.querySelector<HTMLElement>("[data-events-empty]");
+  if (empty && items.length > 0 && visible === 0) empty.hidden = false;
+
+  // Filtr kategorii (bez JavaScriptu widać wszystkie wpisy).
+  const chips = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
+  chips.forEach((chip) => {
+    chip.hidden = false;
+    chip.addEventListener("click", () => {
+      const value = chip.dataset.filter ?? "";
+      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+      document
+        .querySelectorAll<HTMLElement>("[data-category]")
+        .forEach((post) => {
+          const match = !value || post.dataset.category === value;
+          post.classList.toggle("ag-filtered", !match);
+        });
+    });
+  });
+</script>

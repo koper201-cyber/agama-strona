@@ -1,0 +1,239 @@
+---
+import "../styles/theme.css";
+import "../styles/agama.css";
+import { getImage } from "astro:assets";
+import { loadSite, todayInPoland } from "../lib/load-site";
+import { buildViewModel, agamaNav } from "../lib/view-model";
+import { serializeJsonLd } from "../lib/safe-html";
+import { resolveImage } from "../lib/images";
+import { isPreview, previewBranch } from "../lib/env";
+import Photo from "../components/Photo.astro";
+import { accentHtml } from "../lib/accent";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  noindex?: boolean | undefined;
+  jsonLd?: Record<string, unknown>[] | undefined;
+  current?: string | undefined;
+}
+
+const site = loadSite();
+const { data } = site;
+const {
+  title,
+  description,
+  noindex = false,
+  jsonLd = [],
+  current,
+} = Astro.props;
+const pageTitle = title ? `${title} · ${data.site.name}` : data.seo.title;
+const pageDescription = description ?? data.seo.description;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const ogSource = resolveImage(
+  site.imagesDir,
+  data.seo.image ?? data.hero.image,
+);
+const ogImage = ogSource
+  ? await getImage({ src: ogSource, width: 1200, format: "jpg" })
+  : undefined;
+const ogImageUrl = ogImage ? new URL(ogImage.src, Astro.site).href : undefined;
+
+const isAgama = data.site.theme === "agama";
+const { nav } = buildViewModel(data, site.sections, todayInPoland());
+const agama = agamaNav(data);
+const clients = data.clients;
+const colors = isAgama
+  ? `html[data-theme="agama"]{--primary:${data.site.primary_color};--accent:${data.site.accent_color};--bg:${data.site.background_color};}`
+  : `:root{--primary:${data.site.primary_color};}`;
+---
+
+<!doctype html>
+<html lang={data.site.language} data-theme={data.site.theme}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    {(noindex || isPreview) && (
+      <meta name="robots" content="noindex, nofollow" />
+    )}
+    <meta name="theme-color" content={data.site.primary_color} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content={data.site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+    <meta
+      name="twitter:card"
+      content={ogImageUrl ? "summary_large_image" : "summary"}
+    />
+
+    <style is:inline set:html={colors}></style>
+    {jsonLd.map((obj) => (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={serializeJsonLd(obj)}
+      />
+    ))}
+  </head>
+  <body>
+    {isPreview && (
+      <div class="preview-banner" role="status">
+        <strong>PODGLĄD</strong> — ta wersja nie jest jeszcze opublikowana
+        {previewBranch && (
+          <span class="preview-branch"> (zmiana: {previewBranch})</span>
+        )}
+      </div>
+    )}
+    <a class="skip" href="#tresc">
+      Przejdź do treści
+    </a>
+    {isAgama ? (
+      <header class="site-header ag-header" data-menu>
+        <div class="wrap header-inner">
+          <a class="brand ag-brand" href="/">
+            <span set:html={accentHtml(data.site.brand ?? data.site.name)} />
+            {data.site.tagline && (
+              <span class="ag-tagline">{data.site.tagline}</span>
+            )}
+          </a>
+          <button
+            class="ag-menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-glowne"
+            hidden
+          >
+            Menu
+          </button>
+          <nav id="menu-glowne" aria-label="Menu główne">
+            <ul>
+              {agama.links.map((n) => (
+                <li>
+                  <a
+                    href={n.href}
+                    aria-current={current === n.href ? "page" : undefined}
+                  >
+                    {n.label}
+                  </a>
+                </li>
+              ))}
+              {agama.contact && (
+                <li>
+                  <a class="ag-nav-contact" href={agama.contact}>
+                    Kontakt
+                  </a>
+                </li>
+              )}
+            </ul>
+          </nav>
+        </div>
+      </header>
+    ) : (
+      <header class="site-header">
+        <div class="wrap header-inner">
+          <a class="brand" href="/">
+            {data.site.name}
+          </a>
+          {nav.length > 0 && (
+            <nav aria-label="Menu główne">
+              <ul>
+                {nav.map((n) => (
+                  <li>
+                    <a href={n.href}>{n.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+        </div>
+      </header>
+    )}
+    <main id="tresc" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      {isAgama &&
+        data.features.clients &&
+        clients &&
+        clients.list.length > 0 && (
+          <div class="wrap ag-clients">
+            <p class="ag-eyebrow">{clients.heading ?? "Zaufali mi"}</p>
+            <ul>
+              {clients.list.map((c) => (
+                <li>
+                  {c.logo ? (
+                    <Photo
+                      dir={site.imagesDir}
+                      name={c.logo}
+                      alt={c.name}
+                      widths={[160, 320]}
+                      sizes="160px"
+                      class="ag-logo"
+                    />
+                  ) : (
+                    c.name
+                  )}
+                </li>
+              ))}
+            </ul>
+            {clients.note && <p class="ag-note">{clients.note}</p>}
+          </div>
+        )}
+      {isAgama && data.site.footer_text && (
+        <div class="wrap ag-footer-brand">
+          <span
+            class="ag-brand"
+            set:html={accentHtml(data.site.brand ?? data.site.name)}
+          />
+          <p>{data.site.footer_text}</p>
+        </div>
+      )}
+      <div class="wrap footer-inner">
+        <p>
+          © {new Date().getFullYear()} {data.site.name}
+          {data.site.tagline && ` · ${data.site.tagline}`}
+          {data.site.city && ` · ${data.site.city}`}
+        </p>
+        <p>
+          <a href="/polityka-prywatnosci/">Polityka prywatności</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  // Na telefonie menu chowa się pod przyciskiem. Bez JavaScriptu menu jest po prostu widoczne.
+  const header = document.querySelector<HTMLElement>("[data-menu]");
+  const button = header?.querySelector<HTMLButtonElement>(".ag-menu-toggle");
+  const nav = header?.querySelector<HTMLElement>("nav");
+  if (header && button && nav) {
+    header.classList.add("ag-js");
+    button.hidden = false;
+    const close = () => {
+      button.setAttribute("aria-expanded", "false");
+      header.classList.remove("ag-open");
+    };
+    button.addEventListener("click", () => {
+      const open = button.getAttribute("aria-expanded") !== "true";
+      button.setAttribute("aria-expanded", String(open));
+      header.classList.toggle("ag-open", open);
+    });
+    nav.addEventListener("click", (e) => {
+      if ((e.target as HTMLElement).closest("a")) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+</script>

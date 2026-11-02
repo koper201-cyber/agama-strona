@@ -1,0 +1,280 @@
+---
+/** Strona główna motywu agama (wariant B). Wszystko z site.md; puste sekcje się nie pokazują. */
+import Photo from "../Photo.astro";
+import Contact from "../Contact.astro";
+import DotRing from "./DotRing.astro";
+import NewsCard from "./NewsCard.astro";
+import HomeSection from "./HomeSection.astro";
+import { accentHtml } from "../../lib/accent";
+import { splitNews, newsId } from "../../lib/news";
+import type { Site } from "../../lib/load-site";
+
+interface Props {
+  site: Site;
+  today: string;
+}
+const { site, today } = Astro.props;
+const { data, sections } = site;
+const dir = site.imagesDir;
+const f = data.features;
+const about = sections["O mnie"];
+const news = splitNews(data, today);
+const featured = f.news ? (news.upcoming[0] ?? news.articles[0]) : undefined;
+const card = data.feature;
+const afterAbout = data.home_sections.filter((h) => h.position === "po-o-mnie");
+const afterGallery = data.home_sections.filter(
+  (h) => h.position === "po-galerii",
+);
+---
+
+<section class="ag-hero" aria-labelledby="hero-h">
+  <div class="wrap ag-hero-grid">
+    <div>
+      {data.hero.eyebrow && <p class="ag-eyebrow">{data.hero.eyebrow}</p>}
+      <h1 id="hero-h" set:html={accentHtml(data.hero.heading)} />
+      {data.hero.subheading && <p class="ag-lead">{data.hero.subheading}</p>}
+      {data.hero.text && <p>{data.hero.text}</p>}
+      <div class="ag-actions">
+        {data.hero.cta_label && data.hero.cta_link && (
+          <a class="btn" href={data.hero.cta_link}>
+            {data.hero.cta_label}
+          </a>
+        )}
+        {data.hero.cta2_label && data.hero.cta2_link && (
+          <a class="btn btn-ghost" href={data.hero.cta2_link}>
+            {data.hero.cta2_label}
+          </a>
+        )}
+      </div>
+    </div>
+    {data.hero.image && (
+      <div class="ag-hero-visual">
+        <DotRing />
+        <Photo
+          dir={dir}
+          name={data.hero.image}
+          alt={data.hero.alt}
+          eager
+          fallbackFormat="webp"
+          widths={[480, 720]}
+          sizes="(max-width: 800px) 70vw, 340px"
+          class="ag-arch"
+        />
+        {data.hero.badge && <span class="ag-badge">{data.hero.badge}</span>}
+      </div>
+    )}
+  </div>
+  {data.pillars.length > 0 && (
+    <ul class="wrap ag-pillars">
+      {data.pillars.map((p) => (
+        <li>{p}</li>
+      ))}
+    </ul>
+  )}
+  {featured ? (
+    <div class="wrap">
+      <a
+        class="ag-feature"
+        href={`/aktualnosci/#${newsId(featured)}`}
+        data-feature-date={
+          featured.kind === "wydarzenie" ? featured.date : undefined
+        }
+      >
+        {(featured.image ?? card?.image) && (
+          <Photo
+            dir={dir}
+            name={featured.image ?? card?.image}
+            alt={featured.image ? (featured.alt ?? "") : (card?.alt ?? "")}
+            widths={[320, 640]}
+            sizes="(max-width: 700px) 100vw, 240px"
+            class="ag-feature-img"
+          />
+        )}
+        <span>
+          <span class="ag-eyebrow">{data.news_page.title}</span>
+          <span class="ag-feature-title">{featured.title}</span>
+          <span class="ag-feature-more">Zobacz szczegóły →</span>
+        </span>
+      </a>
+    </div>
+  ) : (
+    card && (
+      <div class="wrap">
+        <a class="ag-feature" href={card.link}>
+          {card.image && (
+            <Photo
+              dir={dir}
+              name={card.image}
+              alt={card.alt ?? ""}
+              widths={[320, 640]}
+              sizes="(max-width: 700px) 100vw, 240px"
+              class="ag-feature-img"
+            />
+          )}
+          <span>
+            {card.eyebrow && <span class="ag-eyebrow">{card.eyebrow}</span>}
+            <span class="ag-feature-title">{card.title}</span>
+            {card.text && <span class="ag-feature-text">{card.text}</span>}
+            <span class="btn btn-small ag-feature-btn">
+              {card.link_label ?? "Zobacz"} ↗
+            </span>
+          </span>
+        </a>
+      </div>
+    )
+  )}
+</section>
+
+{f.offer && data.offer.length > 0 && (
+  <section id="oferta" class="section" aria-label="Oferta">
+    <ul class="wrap ag-cards">
+      {data.offer.map((o) => (
+        <li class="ag-card">
+          {o.label && <p class="ag-eyebrow">{o.label}</p>}
+          <h2 class="ag-card-title">{o.title}</h2>
+          {o.text && <p>{o.text}</p>}
+          {o.price && <p class="price">{o.price}</p>}
+          {o.link && (
+            <a class="ag-more" href={o.link}>
+              {o.link_label ?? "Więcej"} →
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+{f.stats && data.stats.length > 0 && (
+  <section class="ag-stats-wrap" aria-label="W liczbach">
+    <ul class="wrap ag-stats">
+      {data.stats.map((s) => (
+        <li>
+          <strong>{s.value}</strong>
+          <span>{s.label}</span>
+        </li>
+      ))}
+    </ul>
+    {data.stats_note && <p class="wrap ag-note">{data.stats_note}</p>}
+  </section>
+)}
+
+{f.about && about && (
+  <section id="o-mnie" class="section" aria-labelledby="o-mnie-h">
+    <div class="wrap ag-about">
+      {data.about_photo && (
+        <figure class="ag-about-photo">
+          <Photo
+            dir={dir}
+            name={data.about_photo.image}
+            alt={data.about_photo.alt}
+            widths={[400, 800]}
+            sizes="(max-width: 900px) 100vw, 420px"
+          />
+          {data.about_photo.caption && (
+            <figcaption>{data.about_photo.caption}</figcaption>
+          )}
+        </figure>
+      )}
+      <div>
+        <p class="ag-eyebrow">O mnie</p>
+        {data.about_intro ? (
+          <>
+            <h2 id="o-mnie-h" set:html={accentHtml(data.about_intro.heading)} />
+            {data.about_intro.paragraphs.map((p) => (
+              <p>{p}</p>
+            ))}
+          </>
+        ) : (
+          <>
+            <h2 id="o-mnie-h" class="visually-hidden">
+              O mnie
+            </h2>
+            <div class="prose ag-prose" set:html={about} />
+          </>
+        )}
+        {data.credentials.length > 0 && (
+          <ul class="ag-tags">
+            {data.credentials.map((c) => (
+              <li>{c}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+{afterAbout.map((h) => (
+  <HomeSection section={h} dir={dir} />
+))}
+
+{f.quote && data.quote && (
+  <section class="ag-quote" aria-label="Cytat">
+    <figure class="wrap">
+      <blockquote>
+        <p set:html={accentHtml(`„${data.quote.text}”`)} />
+      </blockquote>
+      {data.quote.author && <figcaption>{data.quote.author}</figcaption>}
+    </figure>
+  </section>
+)}
+
+{f.gallery && data.gallery && data.gallery.images.length > 0 && (
+  <section class="section" aria-labelledby="galeria-h">
+    <div class="wrap">
+      {data.gallery.eyebrow && <p class="ag-eyebrow">{data.gallery.eyebrow}</p>}
+      <h2
+        id="galeria-h"
+        set:html={accentHtml(data.gallery.heading ?? "Galeria")}
+      />
+      <ul class="ag-gallery">
+        {data.gallery.images.map((g) => (
+          <li>
+            <Photo
+              dir={dir}
+              name={g.image}
+              alt={g.alt}
+              widths={[300, 600]}
+              sizes="(max-width: 700px) 50vw, 25vw"
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+{afterGallery.map((h) => (
+  <HomeSection section={h} dir={dir} />
+))}
+
+{f.news && news.upcoming.length > 1 && (
+  <section class="section ag-soft" aria-labelledby="najblizsze-h">
+    <div class="wrap">
+      <p class="ag-eyebrow">{data.news_page.title}</p>
+      <h2 id="najblizsze-h">Najbliższe terminy</h2>
+      <ul class="ag-posts" data-events>
+        {news.upcoming.slice(0, 3).map((n) => (
+          <NewsCard item={n} dir={dir} />
+        ))}
+      </ul>
+      <p>
+        <a class="ag-more" href="/aktualnosci/">
+          Wszystkie aktualności →
+        </a>
+      </p>
+    </div>
+  </section>
+)}
+
+{f.contact && (
+  <div class="ag-contact">
+    <Contact
+      contact={data.contact}
+      eyebrow={data.contact.eyebrow}
+      heading={accentHtml(data.contact.heading ?? "Kontakt")}
+      intro={data.contact.intro}
+    />
+  </div>
+)}

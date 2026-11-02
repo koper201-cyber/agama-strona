@@ -1,0 +1,63 @@
+---
+/** Jeden wpis Aktualności. Wydarzenia mają data-date, żeby po terminie same znikały z listy nadchodzących. */
+import Photo from "../Photo.astro";
+import { eventStart } from "../../lib/dates";
+import { newsId } from "../../lib/news";
+import type { NewsItem } from "../../lib/site-schema";
+
+interface Props {
+  item: NewsItem;
+  dir: string;
+  archived?: boolean;
+}
+const { item, dir, archived = false } = Astro.props;
+const isEvent = item.kind === "wydarzenie";
+const longDate = new Intl.DateTimeFormat("pl-PL", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+const pln = new Intl.NumberFormat("pl-PL", {
+  style: "currency",
+  currency: "PLN",
+  maximumFractionDigits: 0,
+});
+const date = longDate.format(new Date(`${item.date}T00:00:00Z`));
+---
+
+<li
+  class="ag-post"
+  id={newsId(item)}
+  data-category={item.category}
+  data-date={isEvent && !archived ? item.date : undefined}
+>
+  {item.image && (
+    <Photo
+      dir={dir}
+      name={item.image}
+      alt={item.alt ?? ""}
+      widths={[400, 800]}
+      sizes="(max-width: 700px) 100vw, 33vw"
+      class="ag-post-img"
+    />
+  )}
+  <div class="ag-post-body">
+    <p class="ag-eyebrow">{item.category}</p>
+    <h3>{item.title}</h3>
+    <p class="ag-post-meta">
+      <time datetime={isEvent ? eventStart(item.date, item.time) : item.date}>
+        {date}
+        {isEvent && item.time && `, godz. ${item.time}`}
+      </time>
+      {item.place && ` · ${item.place}`}
+      {item.price !== undefined && ` · ${pln.format(item.price)}`}
+    </p>
+    {item.text && <p>{item.text}</p>}
+    {isEvent && !archived && item.signup && (
+      <a class="btn btn-small" href={item.signup}>
+        Zapisz się
+      </a>
+    )}
+  </div>
+</li>

@@ -1,0 +1,23 @@
+---
+/** Kropkowa mandala wokół portretu — rysowana w SVG, kolory z motywu. */
+const ring = (r: number, n: number, dot: number) =>
+  Array.from({ length: n }, (_, k) => {
+    const a = (k / n) * Math.PI * 2;
+    return {
+      cx: (200 + r * Math.cos(a)).toFixed(1),
+      cy: (200 + r * Math.sin(a)).toFixed(1),
+      r: dot,
+    };
+  });
+const rings = [ring(196, 72, 2.6), ring(182, 54, 3.4), ring(168, 40, 2)];
+---
+
+<svg class="ag-dots" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+  {rings.map((dots, i) => (
+    <g class={`d${i + 1}`}>
+      {dots.map((d) => (
+        <circle cx={d.cx} cy={d.cy} r={d.r} />
+      ))}
+    </g>
+  ))}
+</svg>

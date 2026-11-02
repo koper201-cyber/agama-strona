@@ -1,0 +1,129 @@
+---
+/**
+ * Podstrona z szablonu: tekstowa (tekst + zdjęcie), oferta (karty), galeria (siatka zdjęć).
+ * Długi tekst: sekcja Markdown w site.md pod nagłówkiem równym tytułowi podstrony („# Coaching”).
+ */
+import Photo from "../Photo.astro";
+import { accentHtml } from "../../lib/accent";
+import type { Page } from "../../lib/site-schema";
+import type { Site } from "../../lib/load-site";
+
+interface Props {
+  page: Page;
+  site: Site;
+}
+const { page, site } = Astro.props;
+const dir = site.imagesDir;
+const body = site.sections[page.title];
+const gallery = page.template === "galeria";
+const offer = page.template === "oferta";
+---
+
+<section class="ag-subhero" aria-labelledby="strona-h">
+  <div class="wrap">
+    <p class="ag-crumb">
+      <a href="/">Strona główna</a> / {page.title}
+    </p>
+    {page.eyebrow && <p class="ag-eyebrow">{page.eyebrow}</p>}
+    <h1 id="strona-h" set:html={accentHtml(page.heading ?? page.title)} />
+    {page.lead && <p class="ag-lead">{page.lead}</p>}
+    {page.button_label && page.button_link && (
+      <a class="btn" href={page.button_link}>
+        {page.button_label}
+      </a>
+    )}
+  </div>
+</section>
+
+{(body || page.image) && (
+  <section class="section">
+    <div class:list={["wrap", page.image ? "ag-split" : "narrow"]}>
+      {body && <div class="prose ag-prose" set:html={body} />}
+      {page.image && (
+        <Photo
+          dir={dir}
+          name={page.image}
+          alt={page.alt}
+          widths={[480, 960]}
+          sizes="(max-width: 900px) 100vw, 50vw"
+          class="ag-photo"
+        />
+      )}
+    </div>
+  </section>
+)}
+
+{page.items.length > 0 && (
+  <section class="section" aria-labelledby="pozycje-h">
+    <div class="wrap">
+      <h2
+        id="pozycje-h"
+        set:html={accentHtml(page.items_heading ?? "Co obejmuje")}
+      />
+      {offer ? (
+        <ul class="ag-cards ag-cards-wide">
+          {page.items.map((item, i) => (
+            <li class="ag-card">
+              <p class="ag-eyebrow">{String(i + 1).padStart(2, "0")}</p>
+              <h3 class="ag-card-title">{item.title}</h3>
+              {item.text && <p>{item.text}</p>}
+              {item.link && (
+                <a class="ag-more" href={item.link}>
+                  {item.link_label ?? "Zapytaj"} →
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ol class="ag-list">
+          {page.items.map((item) => (
+            <li>
+              <h3>{item.title}</h3>
+              {item.text && <p>{item.text}</p>}
+              {item.link && (
+                <a class="ag-more" href={item.link}>
+                  {item.link_label ?? "Więcej"} →
+                </a>
+              )}
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+  </section>
+)}
+
+{page.quote && (
+  <section class="ag-quote" aria-label="Cytat">
+    <figure class="wrap">
+      <blockquote>
+        <p set:html={accentHtml(page.quote)} />
+      </blockquote>
+    </figure>
+  </section>
+)}
+
+{page.images.length > 0 && (
+  <section class="section" aria-label="Zdjęcia">
+    <ul
+      class:list={[
+        "wrap",
+        "ag-gallery",
+        { "ag-gallery-big": gallery, "ag-round": page.shape === "koła" },
+      ]}
+    >
+      {page.images.map((g) => (
+        <li>
+          <Photo
+            dir={dir}
+            name={g.image}
+            alt={g.alt}
+            widths={[300, 600]}
+            sizes="(max-width: 700px) 50vw, 25vw"
+          />
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

@@ -1,0 +1,14 @@
+# Pliki techniczne i zasady agenta zatwierdza administrator (Błażej).
+# Treść (site.md, zdjecia/) i wygląd (src/styles/agama.css, src/components/agama/) właścicielka zatwierdza sama.
+# Działa po włączeniu w GitHub reguły „Require review from Code Owners” (patrz README, Zabezpieczenia).
+/.github/ @koper201-cyber
+/scripts/ @koper201-cyber
+/src/lib/ @koper201-cyber
+/src/pages/ @koper201-cyber
+/src/layouts/ @koper201-cyber
+/tests/ @koper201-cyber
+/package.json @koper201-cyber
+/package-lock.json @koper201-cyber
+/astro.config.mjs @koper201-cyber
+/AGENTS.md @koper201-cyber
+/CLAUDE.md @koper201-cyber
