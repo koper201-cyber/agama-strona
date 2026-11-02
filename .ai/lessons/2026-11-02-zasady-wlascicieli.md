@@ -7,3 +7,5 @@
 - Decyzja Błażeja: każdy agent dokumentuje swoją pracę w repo, również konfigurację zewnętrzną, sprawdzone ustalenia, niepowodzenia i stan przekazania. Dotychczasowy obowiązek logu zmian był zbyt wąsko sformułowany; sekcja 8 doprecyzowuje zakres i wymaga rozróżnienia przygotowania, sprawdzenia i publikacji.
 
 - Doprecyzowanie Błażeja: działający podgląd zmiany ma być pierwszym i najszybszym wynikiem. Agent wysyła minimalną zmianę i PR przed pełnymi testami lokalnymi i rozbudowaną dokumentacją; link przekazuje natychmiast po krótkim sprawdzeniu. Testy i resztę pracy kończy potem. Po zatwierdzeniu albo odrzuceniu podejmuje od razu właściwą czynność, bez ponownego pytania o tę samą decyzję; kontrole publikacji i zgodność SHA nadal obowiązują.
+
+- Korekta Błażeja: obowiązek dokumentowania nie może powodować kolejnych commitów z samymi wynikami, ponownych kontroli i podglądów. Początkowy log jest w tym samym commicie co zmiana; późniejsze wyniki od razu w komentarzu właściwego PR, uzupełnienie pliku przy następnej rzeczywistej zmianie. Po publikacji bez osobnego PR tylko z logiem. Reguła nie wyłącza wymaganych kontroli ani nie upoważnia do omijania zabezpieczeń.
