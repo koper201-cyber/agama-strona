@@ -5,3 +5,5 @@
 - Zapobieganie: przy edycji AGENTS.md nie osłabiać tych zasad bez decyzji obojga właścicieli.
 
 - Decyzja Błażeja: każdy agent dokumentuje swoją pracę w repo, również konfigurację zewnętrzną, sprawdzone ustalenia, niepowodzenia i stan przekazania. Dotychczasowy obowiązek logu zmian był zbyt wąsko sformułowany; sekcja 8 doprecyzowuje zakres i wymaga rozróżnienia przygotowania, sprawdzenia i publikacji.
+
+- Doprecyzowanie Błażeja: działający podgląd zmiany ma być pierwszym i najszybszym wynikiem. Agent wysyła minimalną zmianę i PR przed pełnymi testami lokalnymi i rozbudowaną dokumentacją; link przekazuje natychmiast po krótkim sprawdzeniu. Testy i resztę pracy kończy potem. Po zatwierdzeniu albo odrzuceniu podejmuje od razu właściwą czynność, bez ponownego pytania o tę samą decyzję; kontrole publikacji i zgodność SHA nadal obowiązują.
