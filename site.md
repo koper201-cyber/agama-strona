@@ -86,7 +86,7 @@ home_sections:
   - id: "coaching"
     kind: "duet"
     eyebrow: "Coaching"
-    heading: "Odkryj możliwości. *Działaj świadomie.*"
+    heading: "Coaching – odkryj możliwości. Wybierz kierunek. Działaj świadomie."
     image: "coaching-sesja.jpg"
     alt: "Rozmowa coachingowa przy stoliku"
     items:
@@ -318,7 +318,7 @@ pages:
     title: "Coaching"
     template: "tekstowa"
     eyebrow: "Indywidualny i biznesowy"
-    heading: "Odkryj możliwości. *Działaj świadomie.*"
+    heading: "Coaching – odkryj możliwości. Wybierz kierunek. Działaj świadomie."
     lead: "Czasem nie potrzebujesz gotowych odpowiedzi. Potrzebujesz przestrzeni, by odnaleźć własne."
     image: "coaching-rozmowa-fotele.jpg"
     alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
@@ -408,9 +408,19 @@ Projektuję i prowadzę szkolenia łączące merytoryczną wiedzę z praktyką, 
 
 # Coaching
 
-Coaching to proces, który pomaga lepiej zrozumieć siebie, uporządkować myśli, odkryć nowe możliwości i świadomie podejmować decyzje. Nie narzucam gotowych rozwiązań — pomagam spojrzeć na sytuację z innej perspektywy i odnaleźć odpowiedzi zgodne z Twoimi wartościami.
+Każdy z nas ma zasoby, doświadczenia i możliwości, które mogą stać się punktem wyjścia do zmiany. Czasem jednak trudno dostrzec je z własnej perspektywy, określić kierunek lub zrobić pierwszy krok.
 
-### Coaching indywidualny — rozwój zaczyna się od Ciebie
+Coaching to proces, który pomaga lepiej zrozumieć siebie, uporządkować myśli, odkryć nowe możliwości i świadomie podejmować decyzje. To przestrzeń do refleksji, poszukiwania rozwiązań i budowania drogi prowadzącej do tego, co naprawdę ważne.
+
+Jako coach wspieram w odkrywaniu własnego potencjału, wzmacnianiu sprawczości i przekładaniu celów na konkretne działania. Nie narzucam gotowych rozwiązań — pomagam spojrzeć na sytuację z innej perspektywy i odnaleźć odpowiedzi, które są zgodne z Twoimi wartościami, potrzebami i aspiracjami.
+
+## Coaching indywidualny
+
+### Rozwój zaczyna się od Ciebie
+
+Coaching indywidualny to czas poświęcony sobie, swoim potrzebom i kierunkowi, w którym chcesz podążać. Pomaga lepiej rozumieć własne reakcje, rozpoznawać ograniczające przekonania i świadomie korzystać z posiadanych zasobów.
+
+Może wspierać Cię w takich obszarach jak:
 
 - budowanie pewności siebie i poczucia własnej wartości,
 - odkrywanie mocnych stron i własnego potencjału,
@@ -419,15 +429,47 @@ Coaching to proces, który pomaga lepiej zrozumieć siebie, uporządkować myśl
 - rozwijanie asertywności i budowanie satysfakcjonujących relacji,
 - odnajdywanie równowagi między życiem zawodowym a osobistym.
 
-### Coaching biznesowy — świadomy lider, skuteczniejsze działanie
+To proces dla osób, które chcą lepiej poznać siebie, świadomie kształtować swoją przyszłość i odważniej korzystać z własnych możliwości.
 
-- rozwijanie kompetencji przywódczych i budowanie autorytetu,
-- doskonalenie komunikacji i rozwiązywanie trudnych sytuacji,
-- podejmowanie decyzji, delegowanie i wzmacnianie samodzielności zespołu,
-- zarządzanie sobą w czasie, stresem i własną efektywnością,
-- przygotowanie do nowej roli lub wyzwania zawodowego.
+## Coaching biznesowy
 
-Prowadzę procesy coachingowe zgodnie z [kodeksem etycznym ICF](https://icf.org.pl/kodeks-etyczny/), z zachowaniem partnerskiej relacji i pełnej poufności.
+### Świadomy lider. Skuteczniejsze działanie. Lepsze relacje.
+
+W środowisku zawodowym liczą się nie tylko kompetencje i doświadczenie, lecz także umiejętność podejmowania decyzji, budowania relacji, radzenia sobie z presją i rozwijania potencjału innych.
+
+Coaching biznesowy wspiera liderów, menedżerów i specjalistów w rozwijaniu świadomości, wzmacnianiu skuteczności oraz znajdowaniu rozwiązań dopasowanych do wyzwań zawodowych.
+
+Może koncentrować się między innymi na:
+
+- rozwijaniu kompetencji przywódczych,
+- budowaniu autorytetu i świadomym zarządzaniu zespołem,
+- doskonaleniu komunikacji i rozwiązywaniu trudnych sytuacji,
+- podejmowaniu decyzji i zwiększaniu odpowiedzialności,
+- delegowaniu zadań i wzmacnianiu samodzielności pracowników,
+- zarządzaniu sobą w czasie, stresem i własną efektywnością,
+- przygotowaniu do nowej roli lub wyzwania zawodowego.
+
+Coaching biznesowy pomaga dostrzec nowe możliwości działania, lepiej wykorzystywać własne kompetencje i budować sposób pracy, który wspiera zarówno realizację celów, jak i jakość relacji.
+
+## Jak pracuję?
+
+W coachingu ważne są dla mnie uważność, autentyczność i partnerska relacja. Tworzę przestrzeń do otwartej rozmowy, zadawania ważnych pytań i odkrywania perspektyw, które mogą prowadzić do zmiany.
+
+Pracujemy nad tym, co jest dla Ciebie istotne. Wspólnie porządkujemy cele, przyglądamy się przekonaniom i dotychczasowym sposobom działania, a następnie szukamy rozwiązań, które możesz wykorzystać w praktyce.
+
+Coaching nie polega na dawaniu rad ani ocenianiu. Jego siłą jest wspieranie samodzielności, odpowiedzialności i świadomego wyboru.
+
+## Zrób miejsce na zmianę
+
+Nie zawsze możemy zmienić okoliczności, w których się znajdujemy. Możemy jednak nauczyć się inaczej na nie patrzeć, podejmować bardziej świadome decyzje i wybierać działania, które przybliżają nas do wyznaczonego celu.
+
+Jeśli czujesz, że jesteś w miejscu, w którym chcesz coś zmienić, rozwinąć lub lepiej zrozumieć — coaching może być początkiem tej drogi.
+
+## AGAMA – motywacja, szkolenia i coaching
+
+### Świadomość. Możliwości. Działanie.
+
+Skontaktuj się ze mną i porozmawiajmy o tym, czego potrzebujesz, aby zrobić kolejny krok.
 
 # Mandale
 
