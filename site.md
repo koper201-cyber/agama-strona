@@ -65,6 +65,7 @@ about_intro:
   heading: "O mnie"
   paragraphs:
     - "Jestem certyfikowanym coachem II stopnia na poziomie PCC (*Professional Certified Coach*) według standardów ICF (*International Coaching Federation*), coachem przywództwa zrzeszonym w John Maxwell Team, największej organizacji przywództwa na świecie, oraz certyfikowaną trenerką kompetencji miękkich i rozwoju osobistego z wieloletnim doświadczeniem biznesowym."
+    - "Ważnym obszarem mojego doświadczenia jest również praca z głosem, słowem i przekazem. Mam doświadczenie w pracy radiowej, pracy na scenie, nagrywaniu materiałów audio oraz przygotowywaniu treści edukacyjnych. Dzięki temu szczególną uwagę zwracam na sposób komunikowania, budowanie angażującego przekazu i umiejętność docierania do odbiorców. Wierzę, że słowa mają moc – mogą inspirować, zmieniać sposób myślenia, dodawać odwagi i zachęcać do działania."
 
 home_sections:
   - id: "wystapienia"
