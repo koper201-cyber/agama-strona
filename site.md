@@ -13,9 +13,9 @@ site:
   city: "Poznań"
   theme: "agama"
   # Kolory: główny (przyciski, nagłówki), akcent (kropki, wyróżnienia), tło.
-  primary_color: "#292956"
-  accent_color: "#63AD9F"
-  background_color: "#F7F5EF"
+  primary_color: "#075B45"
+  accent_color: "#BE9A50"
+  background_color: "#F3EEE4"
 
 seo:
   title: "Agnieszka Marciniak · AGAMA — motywacja, szkolenia i coaching"
