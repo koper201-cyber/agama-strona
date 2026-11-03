@@ -1,0 +1,9 @@
+# Białe tło, większy portret i aktualizacja O mnie
+
+Stan: przygotowanie podglądu, bez zatwierdzenia publikacji tej wersji.
+Cel: wykonać nową prośbę właścicielki na aktualnym main 47dea47b651418e4cadf89be8a799283d1337583, zachowując opublikowane tam teksty i układ.
+Zakres: site.md, zdjęcie w zdjecia/, prezentacja Home.astro oraz agama.css i dokumentacja. Bez nowych zależności, zmian plików chronionych i publikacji produkcyjnej.
+Wymagania: białe tło wszystkich stron z istniejącego site.background_color #FFFFFF oraz jednolite tło górnych części podstron bez dotychczasowego gradientu; większy kwadratowy portret głównej; hasło „Inspiruję do zmiany.” w jednym wierszu także na telefonie, bez przewijania poziomego; kropki na końcu haseł, bez kropek w nazwach sekcji i przycisków.
+Treść: 25+ lat doświadczenia biznesowego; 9000+ godzin przeprowadzonych szkoleń, warsztatów i sesji coachingowych; 3500+ uczestników szkoleń, warsztatów, sesji, prelekcji. Usunąć widoczne hasło tylko w O mnie na głównej; skrócić mały baner do Coach ICF · PCC, zachowując rozwinięcia w akapicie i na podstronie. Nowe załączone zdjęcie po lewej, tekst po prawej; zachować cały kadr zdjęcia. Na telefonie jedna kolumna.
+Plan: dane i zdjęcie → minimalny CSS i prezentacja hasła O mnie → przegląd zakresu, sekretów i diff → PR i sprawdzony podgląd → CI oraz kontrola geometrii, zdjęć i czytelności na telefonie i komputerze → decyzja właścicielki.
+Weryfikacja: Preview URL konkretnego SHA z udanego checku Cloudflare, HTTP 200 i szybkie sprawdzenie efektu przed linkiem; po przekazaniu linku istniejące CI (typy, testy, walidacja, build), 10 tras, widoki 320/390/900/1024/1440 px dla zmienionych elementów i oglądanie telefonu/komputera. Publikacja wyłącznie po zatwierdzeniu pokazanej wersji.

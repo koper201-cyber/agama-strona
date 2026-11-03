@@ -57,7 +57,7 @@ const afterGallery = data.home_sections.filter(
           eager
           fallbackFormat="webp"
           widths={[480, 720]}
-          sizes="(max-width: 800px) 70vw, 340px"
+          sizes="(max-width: 360px) calc(100vw - 2.5rem), (max-width: 600px) 320px, 420px"
           class="ag-arch"
         />
         {data.hero.badge && <span class="ag-badge">{data.hero.badge}</span>}
@@ -180,7 +180,11 @@ const afterGallery = data.home_sections.filter(
         <p class="ag-eyebrow">O mnie</p>
         {data.about_intro ? (
           <>
-            <h2 id="o-mnie-h" set:html={accentHtml(data.about_intro.heading)} />
+            <h2
+              id="o-mnie-h"
+              class="visually-hidden"
+              set:html={accentHtml(data.about_intro.heading)}
+            />
             {data.about_intro.paragraphs.map((p) => (
               <p set:html={accentHtml(p)} />
             ))}

@@ -62,7 +62,7 @@ feature:
   link_label: "Zobacz aktualności"
 
 about_intro:
-  heading: "Jeśli chcesz cokolwiek zmienić, zacznij od siebie"
+  heading: "O mnie"
   paragraphs:
     - "Jestem certyfikowanym coachem ICF (*International Coaching Federation*) na poziomie PCC (*Professional Certified Coach*), coachem przywództwa w John Maxwell Team oraz certyfikowaną trenerką kompetencji miękkich z wieloletnim doświadczeniem biznesowym."
     - "Mam doświadczenie w pracy radiowej i nagrywaniu głosu. Praca ze słowem nauczyła mnie, jak przekazywać treści w sposób angażujący i docierać do odbiorców."
@@ -85,7 +85,7 @@ home_sections:
   - id: "coaching"
     kind: "duet"
     eyebrow: "Coaching"
-    heading: "Odkryj *możliwości*"
+    heading: "Odkryj *możliwości*."
     image: "coaching-rozmowa-fotele.jpg"
     alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
     items:
@@ -123,11 +123,11 @@ home_sections:
         alt: "Turkusowo-granatowa mandala w śniegu"
 
 about_photo:
-  image: "wystapienie-2.jpg"
-  alt: "Agnieszka Marciniak prowadzi zajęcia w sali szkoleniowej"
+  image: "agnieszka-z-chusta.jpg"
+  alt: "Agnieszka Marciniak siedzi na krześle i unosi turkusową chustę"
 
 credentials:
-  - "Coach ICF (*International Coaching Federation*) · PCC (*Professional Certified Coach*)"
+  - "Coach ICF · PCC"
   - "John Maxwell Team"
   - "Trenerka kompetencji miękkich"
 
@@ -161,14 +161,14 @@ offer:
     link: "/coaching/"
     link_label: "Jak pracuję"
 
-# UZUPEŁNIJ: liczby pochodzą z BIO — Agnieszka ma je potwierdzić przed publikacją.
+# Liczby podane przez Agnieszkę w rozmowie 2026-11-03.
 stats:
   - value: "25+"
-    label: "lat doświadczenia biznesowego, w tym prowadzenia zespołów"
-  - value: "7000+"
-    label: "godzin szkoleń, warsztatów i sesji coachingowych"
-  - value: "2500+"
-    label: "pracowników, menedżerów i właścicieli firm"
+    label: "lat doświadczenia biznesowego"
+  - value: "9000+"
+    label: "godzin przeprowadzonych szkoleń, warsztatów i sesji coachingowych"
+  - value: "3500+"
+    label: "uczestników szkoleń, warsztatów, sesji, prelekcji"
 
 quote:
   text: "Czasem nie potrzebujesz gotowych odpowiedzi. Potrzebujesz *przestrzeni*, by odnaleźć własne."
@@ -222,7 +222,7 @@ pages:
     title: "O mnie"
     template: "tekstowa"
     eyebrow: "Trenerka · coach · mówczyni"
-    heading: "Jeśli chcesz cokolwiek zmienić, zacznij od siebie"
+    heading: "Jeśli chcesz cokolwiek zmienić, zacznij od siebie."
     image: "portret-usmiech.jpg"
     alt: "Uśmiechnięta Agnieszka Marciniak w okularach"
     items_heading: "Dyplomy i *certyfikaty*"
@@ -417,7 +417,7 @@ Jako coach wspieram w odkrywaniu własnego potencjału, wzmacnianiu sprawczości
 
 ## Coaching indywidualny
 
-### Rozwój zaczyna się od Ciebie
+### Rozwój zaczyna się od Ciebie.
 
 Coaching indywidualny to czas poświęcony sobie, swoim potrzebom i kierunkowi, w którym chcesz podążać. Pomaga lepiej rozumieć własne reakcje, rozpoznawać ograniczające przekonania i świadomie korzystać z posiadanych zasobów.
 
@@ -460,7 +460,7 @@ Pracujemy nad tym, co jest dla Ciebie istotne. Wspólnie porządkujemy cele, prz
 
 Coaching nie polega na dawaniu rad ani ocenianiu. Jego siłą jest wspieranie samodzielności, odpowiedzialności i świadomego wyboru.
 
-## Zrób miejsce na zmianę
+## Zrób miejsce na zmianę.
 
 Nie zawsze możemy zmienić okoliczności, w których się znajdujemy. Możemy jednak nauczyć się inaczej na nie patrzeć, podejmować bardziej świadome decyzje i wybierać działania, które przybliżają nas do wyznaczonego celu.
 
