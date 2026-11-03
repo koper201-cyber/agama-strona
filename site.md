@@ -15,7 +15,7 @@ site:
   # Kolory: główny (przyciski, nagłówki), akcent (kropki, wyróżnienia), tło.
   primary_color: "#123D30"
   accent_color: "#B49A67"
-  background_color: "#FFFCF5"
+  background_color: "#FFFFFF"
 
 seo:
   title: "Agnieszka Marciniak · AGAMA — motywacja, szkolenia i coaching"
@@ -36,8 +36,8 @@ contact:
 
 hero:
   eyebrow: "AGAMA · motywacja, szkolenia i coaching"
-  heading: "Inspiruję do *zmiany*,"
-  subheading: "pomagam odkryć potencjał, wspieram w działaniu"
+  heading: "Inspiruję do *zmiany*."
+  subheading: "Pomagam uwolnić potencjał. Wspieram w działaniu."
   text: "Wspieram ludzi i organizacje w odkrywaniu potencjału, rozwijaniu kompetencji i wprowadzaniu zmian, które mają znaczenie."
   cta_label: "Oferta dla firm"
   cta_link: "#oferta"
@@ -62,7 +62,7 @@ feature:
   link_label: "Zobacz aktualności"
 
 about_intro:
-  heading: "Inspiruję do *zmiany*. Pomagam odkrywać *potencjał*. Wspieram w *działaniu*."
+  heading: "Jeśli chcesz cokolwiek zmienić, zacznij od siebie"
   paragraphs:
     - "Jestem certyfikowanym coachem ICF (*International Coaching Federation*) na poziomie PCC (*Professional Certified Coach*), coachem przywództwa w John Maxwell Team oraz certyfikowaną trenerką kompetencji miękkich z wieloletnim doświadczeniem biznesowym."
     - "Mam doświadczenie w pracy radiowej i nagrywaniu głosu. Praca ze słowem nauczyła mnie, jak przekazywać treści w sposób angażujący i docierać do odbiorców."
@@ -71,7 +71,7 @@ home_sections:
   - id: "wystapienia"
     kind: "lista"
     eyebrow: "Wystąpienia motywacyjne"
-    heading: "Czasem wystarczy jedno *usłyszane zdanie*."
+    heading: "Czasem wystarczy jedno usłyszane zdanie."
     text: "Wystąpienia to okazja do refleksji, odkrywania potencjału i szukania nowych sposobów działania. Dla firm, instytucji, kadry menedżerskiej i organizatorów konferencji."
     banner: "baner-wystapienie.jpg"
     banner_alt: "Agnieszka podczas wystąpienia przed grupą"
@@ -85,7 +85,7 @@ home_sections:
   - id: "coaching"
     kind: "duet"
     eyebrow: "Coaching"
-    heading: "Coaching – odkryj możliwości. Wybierz kierunek. Działaj świadomie."
+    heading: "Odkryj *możliwości*"
     image: "coaching-rozmowa-fotele.jpg"
     alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
     items:
@@ -222,7 +222,7 @@ pages:
     title: "O mnie"
     template: "tekstowa"
     eyebrow: "Trenerka · coach · mówczyni"
-    heading: "Inspiruję do *zmiany*. Pomagam odkrywać *potencjał*. Wspieram w *działaniu*."
+    heading: "Jeśli chcesz cokolwiek zmienić, zacznij od siebie"
     image: "portret-usmiech.jpg"
     alt: "Uśmiechnięta Agnieszka Marciniak w okularach"
     items_heading: "Dyplomy i *certyfikaty*"
