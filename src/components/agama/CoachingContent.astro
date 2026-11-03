@@ -11,9 +11,13 @@ interface Props {
 const { page, dir, body = "" } = Astro.props;
 // HTML pochodzi z istniejącej sanitizacji site.md; nagłówki h2 dzielą jego sekcje.
 const [intro = "", ...sections] = body.split(/(?=<h2>)/);
-const columnHeadings = new Set(["Coaching indywidualny", "Coaching biznesowy"]);
-const isColumn = (section: string) =>
-  columnHeadings.has(section.match(/^<h2>(.*?)<\/h2>/)?.[1] ?? "");
+const columnIds = new Map([
+  ["Coaching indywidualny", "coaching-indywidualny"],
+  ["Coaching biznesowy", "coaching-biznesowy"],
+]);
+const columnId = (section: string) =>
+  columnIds.get(section.match(/^<h2>(.*?)<\/h2>/)?.[1] ?? "");
+const isColumn = (section: string) => columnId(section) !== undefined;
 // Tekst i odsyłacz zostają w site.md; istniejący link do kontaktu otrzymuje styl przycisku.
 const withContactButton = (section: string) =>
   section.replaceAll(
@@ -45,6 +49,7 @@ const withContactButton = (section: string) =>
     <div class="wrap ag-coaching-grid">
       {sections.map((section) => (
         <section
+          id={columnId(section)}
           class:list={[
             "prose",
             "ag-prose",

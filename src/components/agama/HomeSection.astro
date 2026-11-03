@@ -10,6 +10,10 @@ interface Props {
 }
 const { section: s, dir } = Astro.props;
 const headingId = `${s.id}-h`;
+const coachingLinks = new Map([
+  ["Coaching indywidualny", "/coaching/#coaching-indywidualny"],
+  ["Coaching biznesowy", "/coaching/#coaching-biznesowy"],
+]);
 ---
 
 <section
@@ -45,12 +49,25 @@ const headingId = `${s.id}-h`;
         {s.text && <p>{s.text}</p>}
         {s.kind === "duet" && s.items.length > 0 && (
           <ul class="ag-duo">
-            {s.items.map((item) => (
-              <li>
-                <h3>{item.title}</h3>
-                {item.text && <p>{item.text}</p>}
-              </li>
-            ))}
+            {s.items.map((item) => {
+              const href =
+                s.id === "coaching" ? coachingLinks.get(item.title) : undefined;
+              return (
+                <li class="ag-card">
+                  <h3 class="ag-card-title">{item.title}</h3>
+                  {item.text && <p>{item.text}</p>}
+                  {href && (
+                    <a
+                      class="ag-more"
+                      href={href}
+                      aria-label={`Więcej: ${item.title}`}
+                    >
+                      Więcej →
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         )}
         {s.note && <p class="ag-note">{s.note}</p>}
