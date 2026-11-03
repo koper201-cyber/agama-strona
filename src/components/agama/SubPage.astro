@@ -86,7 +86,7 @@ const offer = page.template === "oferta";
         <ol class="ag-list">
           {page.items.map((item) => (
             <li>
-              <h3>{item.title}</h3>
+              <h3 set:html={accentHtml(item.title)} />
               {item.text && <p>{item.text}</p>}
               {item.link && (
                 <a class="ag-more" href={item.link}>

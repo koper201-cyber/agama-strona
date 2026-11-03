@@ -13,9 +13,9 @@ site:
   city: "Poznań"
   theme: "agama"
   # Kolory: główny (przyciski, nagłówki), akcent (kropki, wyróżnienia), tło.
-  primary_color: "#075B45"
-  accent_color: "#BE9A50"
-  background_color: "#F3EEE4"
+  primary_color: "#123D30"
+  accent_color: "#B49A67"
+  background_color: "#FFFCF5"
 
 seo:
   title: "Agnieszka Marciniak · AGAMA — motywacja, szkolenia i coaching"
@@ -36,8 +36,8 @@ contact:
 
 hero:
   eyebrow: "AGAMA · motywacja, szkolenia i coaching"
-  heading: "Nie tylko inspiruję do *zmiany*."
-  subheading: "Pomagam odkrywać, od czego ją zacząć."
+  heading: "Inspiruję do *zmiany*,"
+  subheading: "pomagam odkryć potencjał, wspieram w działaniu"
   text: "Wspieram ludzi i organizacje w odkrywaniu potencjału, rozwijaniu kompetencji i wprowadzaniu zmian, które mają znaczenie."
   cta_label: "Oferta dla firm"
   cta_link: "#oferta"
@@ -62,16 +62,16 @@ feature:
   link_label: "Zobacz aktualności"
 
 about_intro:
-  heading: "Trwała zmiana zaczyna się od *świadomości*."
+  heading: "Inspiruję do *zmiany*. Pomagam odkrywać *potencjał*. Wspieram w *działaniu*."
   paragraphs:
-    - "Jestem certyfikowanym coachem ICF na poziomie PCC, coachem przywództwa w John Maxwell Team oraz certyfikowaną trenerką kompetencji miękkich z wieloletnim doświadczeniem biznesowym."
+    - "Jestem certyfikowanym coachem ICF (*International Coaching Federation*) na poziomie PCC (*Professional Certified Coach*), coachem przywództwa w John Maxwell Team oraz certyfikowaną trenerką kompetencji miękkich z wieloletnim doświadczeniem biznesowym."
     - "Mam doświadczenie w pracy radiowej i nagrywaniu głosu. Praca ze słowem nauczyła mnie, jak przekazywać treści w sposób angażujący i docierać do odbiorców."
 
 home_sections:
   - id: "wystapienia"
     kind: "lista"
     eyebrow: "Wystąpienia motywacyjne"
-    heading: "Czasem jedna myśl *wystarczy*."
+    heading: "Czasem wystarczy jedno *usłyszane zdanie*."
     text: "Wystąpienia to okazja do refleksji, odkrywania potencjału i szukania nowych sposobów działania. Dla firm, instytucji, kadry menedżerskiej i organizatorów konferencji."
     banner: "baner-wystapienie.jpg"
     banner_alt: "Agnieszka podczas wystąpienia przed grupą"
@@ -86,8 +86,8 @@ home_sections:
     kind: "duet"
     eyebrow: "Coaching"
     heading: "Coaching – odkryj możliwości. Wybierz kierunek. Działaj świadomie."
-    image: "coaching-sesja.jpg"
-    alt: "Rozmowa coachingowa przy stoliku"
+    image: "coaching-rozmowa-fotele.jpg"
+    alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
     items:
       - title: "Indywidualny"
         text: "Rozwój zaczyna się od Ciebie: pewność siebie, cele, ważne decyzje, równowaga."
@@ -97,7 +97,7 @@ home_sections:
   - id: "mandale"
     kind: "galeria"
     position: "po-galerii"
-    eyebrow: "Agama Mandale"
+    eyebrow: "Agama Mandale · Galeria"
     heading: "Od środka *na zewnątrz*."
     text: "Zmiana zaczyna się w Tobie. Tworzenie mandali stało się dla mnie czymś więcej niż pasją — zaproszeniem do chwili uważności i świadomej pracy nad sobą."
     button_label: "Warsztaty malowania mandali ↗"
@@ -127,7 +127,7 @@ about_photo:
   alt: "Agnieszka Marciniak prowadzi zajęcia w sali szkoleniowej"
 
 credentials:
-  - "Coach ICF · PCC"
+  - "Coach ICF (*International Coaching Federation*) · PCC (*Professional Certified Coach*)"
   - "John Maxwell Team"
   - "Trenerka kompetencji miękkich"
 
@@ -222,13 +222,13 @@ pages:
     title: "O mnie"
     template: "tekstowa"
     eyebrow: "Trenerka · coach · mówczyni"
-    heading: "Trwała zmiana zaczyna się od *świadomości*."
+    heading: "Inspiruję do *zmiany*. Pomagam odkrywać *potencjał*. Wspieram w *działaniu*."
     image: "portret-usmiech.jpg"
     alt: "Uśmiechnięta Agnieszka Marciniak w okularach"
     items_heading: "Dyplomy i *certyfikaty*"
     # UZUPEŁNIJ: brzmienie i lata certyfikatów przepisane z BIO — do potwierdzenia.
     items:
-      - title: "Meritum Certified Coach, II stopień, ICF"
+      - title: "Meritum Certified Coach, II stopień, ICF (*International Coaching Federation*)"
         text: "Szkoła Coachów, Warszawa, 2019"
       - title: "Coach, Trainer, Speaker — John Maxwell Team"
         text: "Warszawa, 2019"
@@ -385,7 +385,7 @@ news: []
 
 ## Pomagam przejść od refleksji do *działania*.
 
-Jestem certyfikowanym coachem II stopnia na poziomie PCC według standardów ICF (International Coaching Federation), coachem przywództwa zrzeszonym w John Maxwell Team, największej organizacji przywództwa na świecie, oraz certyfikowaną trenerką kompetencji miękkich i rozwoju osobistego z wieloletnim doświadczeniem biznesowym.
+Jestem certyfikowanym coachem II stopnia na poziomie PCC (*Professional Certified Coach*) według standardów ICF (*International Coaching Federation*), coachem przywództwa zrzeszonym w John Maxwell Team, największej organizacji przywództwa na świecie, oraz certyfikowaną trenerką kompetencji miękkich i rozwoju osobistego z wieloletnim doświadczeniem biznesowym.
 
 Jako trenerka, coach i mówczyni motywacyjna wspieram ludzi w odkrywaniu potencjału, rozwijaniu kompetencji i wprowadzaniu zmian, które mają znaczenie.
 

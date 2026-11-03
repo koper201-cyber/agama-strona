@@ -1,6 +1,6 @@
 # Szmaragd, złoto, beż i biel na całej stronie
 
-Stan: przygotowanie podglądu, bez zgody na publikację tej wersji.
+Stan: zweryfikowane i opublikowane po zatwierdzeniu właścicielki.
 Prośba właścicielki: zastosować paletę z załącznika na stronie głównej i wszystkich podstronach. Ze wzoru: szmaragd #075B45, złoto #BE9A50, beż #D7C5A5, biel #FFFFFF.
 Początek: czyste drzewo, aktualny main 8b0b990c1f7d1b5977908f8e4f30e0739adc652d. Przeczytano aktualne AGENTS.md i lessons; wspólny Base.astro rozprowadza ustawienia kolorów na wszystkie strony motywu agama.
 Plan: zmienić wyłącznie trzy obsługiwane ustawienia kolorów site.md → minimalny przegląd → PR i sprawdzony podgląd → kontrola wszystkich tras, telefonu/komputera, czytelności i CI → decyzja właścicielki. Prosta konfiguracja wyglądu, bez osobnej nowej specyfikacji, zmian CSS, treści, układu, zdjęć ani zależności.
@@ -8,3 +8,5 @@ Dobór tła do podglądu: szmaragd i złoto dokładnie ze wzoru; dla dużych pow
 Zgodnie z sekcją 8 przy tej rzeczywistej zmianie uzupełniono zakończenie poprzedniego zadania Coaching i przeniesiono jego zweryfikowaną specyfikację do implemented, bez osobnego commita z wynikami.
 Pełne testy i podgląd jeszcze niewykonane; wyniki dalszych kontroli będą w komentarzu PR.
 Minimalny przegląd przed wysłaniem: zmiana wyglądu aplikacji ograniczona do trzech wartości w site.md; pozostałe zmiany to ten log i uzupełnienie dokumentacji zakończonego zadania Coaching. git diff --check poprawne. Bez instalacji zależności i bez pełnych testów przed podglądem.
+
+Zakończenie, przeniesione przy kolejnej rzeczywistej zmianie: PR #33, zatwierdzony head a4c5e09c04e4de841c4cfbfc1509595d040c4bbb, merge f0b7d5315c5253fecaddfd89726631c865e6f444. Wymagane kontrole CI poprawne; podgląd i produkcja sprawdzone na wszystkich 10 trasach w 20 widokach telefonu/komputera, z kontrolą czytelności. Publikacja Cloudflare https://34a6e0bc.agama-strona.pages.dev. Wynik źródłowy: https://github.com/koper201-cyber/agama-strona/pull/33#issuecomment-6611883697.
