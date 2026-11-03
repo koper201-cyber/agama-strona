@@ -182,7 +182,7 @@ const afterGallery = data.home_sections.filter(
           <>
             <h2 id="o-mnie-h" set:html={accentHtml(data.about_intro.heading)} />
             {data.about_intro.paragraphs.map((p) => (
-              <p>{p}</p>
+              <p set:html={accentHtml(p)} />
             ))}
           </>
         ) : (
@@ -196,7 +196,7 @@ const afterGallery = data.home_sections.filter(
         {data.credentials.length > 0 && (
           <ul class="ag-tags">
             {data.credentials.map((c) => (
-              <li>{c}</li>
+              <li set:html={accentHtml(c)} />
             ))}
           </ul>
         )}
