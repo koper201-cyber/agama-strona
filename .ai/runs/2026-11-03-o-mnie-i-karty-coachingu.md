@@ -1,0 +1,10 @@
+# O mnie i odnośniki kart coachingu
+
+Stan: przygotowanie podglądu, bez zgody na publikację nowej wersji.
+Prośba właścicielki: zastąpić tekst O mnie nowymi ośmioma akapitami; na głównej umieścić podany akapit, tekst po lewej, zdjęcie po prawej i strzałkę do podstrony. Dwa rodzaje coachingu przedstawić jak karty oferty i dodać strzałki do odpowiednich bloków podstrony Coaching.
+Początek: czyste drzewo, aktualny main 9e93c7ccdbc1734ad84622c83415ef8b2be9f7d6. Przeczytano AGENTS.md, OWNER_GUIDE.md, lessons, powiązane notatki i poprzednią specyfikację oraz komentarz publikacji PR #36. Istniejące środowisko agama, Node 24.22.1 z .node-version i zależności bez ponownej instalacji.
+Plan i kryteria: .ai/specs/2026-11-03-o-mnie-i-karty-coachingu.md. Najpierw minimalny przegląd, PR i sprawdzony podgląd, pełne kontrole po przekazaniu linku.
+Implementacja w dozwolonym zakresie: użyć istniejącego stylu ag-card i pól title/text; home_sections.items nie obsługuje pól link, więc odnośniki dwóch znanych rodzajów coachingu obsłużyć w komponencie prezentacyjnym. Nie zmieniać schematu ani parsera. Kotwice na zewnętrznych sekcjach CoachingContent; treść i sanitizacja bez zmian. Zachować kursywę pełnych nazw PCC/ICF oraz obecne zdjęcia i certyfikaty.
+Dokumentacja: przy tej rzeczywistej zmianie przenieść zweryfikowaną specyfikację poprzedniego zadania do implemented i zapisać zakończenie PR #36 z komentarza źródłowego. Późniejsze wyniki tej pracy w komentarzach nowego PR, bez dodatkowych commitów z samymi wynikami.
+
+Przed wysłaniem: podmieniono osiem akapitów podstrony i pojedynczy akapit głównej; odwrócono kolejność O mnie, dodano odnośnik warunkowany istnieniem podstrony, wspólne style kart oraz odnośniki i kotwice coachingu. Układ kart dopasowuje się do dostępnej szerokości. Formatowanie zmienionych komponentów i CSS poprawne, git diff --check poprawne. Przejrzano zakres i przypadkowe pliki: bez sekretów, nowych zależności, zmian zdjęć i plików chronionych. Pełne kontrole jeszcze niewykonane — najpierw podgląd.

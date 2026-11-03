@@ -18,6 +18,7 @@ const { data, sections } = site;
 const dir = site.imagesDir;
 const f = data.features;
 const about = sections["O mnie"];
+const aboutPage = data.pages.find((page) => page.slug === "o-mnie");
 const news = splitNews(data, today);
 const featured = f.news ? (news.upcoming[0] ?? news.articles[0]) : undefined;
 const card = data.feature;
@@ -162,20 +163,6 @@ const afterGallery = data.home_sections.filter(
 {f.about && about && (
   <section id="o-mnie" class="section" aria-labelledby="o-mnie-h">
     <div class="wrap ag-about">
-      {data.about_photo && (
-        <figure class="ag-about-photo">
-          <Photo
-            dir={dir}
-            name={data.about_photo.image}
-            alt={data.about_photo.alt}
-            widths={[400, 800]}
-            sizes="(max-width: 900px) 100vw, 420px"
-          />
-          {data.about_photo.caption && (
-            <figcaption>{data.about_photo.caption}</figcaption>
-          )}
-        </figure>
-      )}
       <div>
         <p class="ag-eyebrow">O mnie</p>
         {data.about_intro ? (
@@ -204,7 +191,26 @@ const afterGallery = data.home_sections.filter(
             ))}
           </ul>
         )}
+        {aboutPage && (
+          <a class="ag-more ag-about-link" href={`/${aboutPage.slug}/`}>
+            Więcej o mnie →
+          </a>
+        )}
       </div>
+      {data.about_photo && (
+        <figure class="ag-about-photo">
+          <Photo
+            dir={dir}
+            name={data.about_photo.image}
+            alt={data.about_photo.alt}
+            widths={[400, 800]}
+            sizes="(max-width: 900px) 100vw, 420px"
+          />
+          {data.about_photo.caption && (
+            <figcaption>{data.about_photo.caption}</figcaption>
+          )}
+        </figure>
+      )}
     </div>
   </section>
 )}

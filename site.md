@@ -64,8 +64,7 @@ feature:
 about_intro:
   heading: "O mnie"
   paragraphs:
-    - "Jestem certyfikowanym coachem ICF (*International Coaching Federation*) na poziomie PCC (*Professional Certified Coach*), coachem przywództwa w John Maxwell Team oraz certyfikowaną trenerką kompetencji miękkich z wieloletnim doświadczeniem biznesowym."
-    - "Mam doświadczenie w pracy radiowej i nagrywaniu głosu. Praca ze słowem nauczyła mnie, jak przekazywać treści w sposób angażujący i docierać do odbiorców."
+    - "Jestem certyfikowanym coachem II stopnia na poziomie PCC (*Professional Certified Coach*) według standardów ICF (*International Coaching Federation*), coachem przywództwa zrzeszonym w John Maxwell Team, największej organizacji przywództwa na świecie, oraz certyfikowaną trenerką kompetencji miękkich i rozwoju osobistego z wieloletnim doświadczeniem biznesowym."
 
 home_sections:
   - id: "wystapienia"
@@ -89,9 +88,9 @@ home_sections:
     image: "coaching-rozmowa-fotele.jpg"
     alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
     items:
-      - title: "Indywidualny"
+      - title: "Coaching indywidualny"
         text: "Rozwój zaczyna się od Ciebie: pewność siebie, cele, ważne decyzje, równowaga."
-      - title: "Biznesowy"
+      - title: "Coaching biznesowy"
         text: "Świadomy lider, skuteczniejsze działanie, lepsze relacje w zespole."
     note: "Procesy zgodne z kodeksem etycznym ICF."
   - id: "mandale"
@@ -383,15 +382,21 @@ news: []
 
 # O mnie
 
-## Pomagam przejść od refleksji do *działania*.
-
 Jestem certyfikowanym coachem II stopnia na poziomie PCC (*Professional Certified Coach*) według standardów ICF (*International Coaching Federation*), coachem przywództwa zrzeszonym w John Maxwell Team, największej organizacji przywództwa na świecie, oraz certyfikowaną trenerką kompetencji miękkich i rozwoju osobistego z wieloletnim doświadczeniem biznesowym.
 
-Jako trenerka, coach i mówczyni motywacyjna wspieram ludzi w odkrywaniu potencjału, rozwijaniu kompetencji i wprowadzaniu zmian, które mają znaczenie.
+Pracuję z ludźmi, którzy chcą rozwijać swoje kompetencje, wzmacniać pewność siebie, świadomie budować relacje, doskonalić umiejętności przywódcze i wprowadzać zmiany zarówno w życiu zawodowym, jak i osobistym.
 
-Mam doświadczenie w pracy radiowej, nagrywaniu głosu oraz przygotowywaniu materiałów audio i edukacyjnych. Praca ze słowem i głosem nauczyła mnie, jak przekazywać treści w sposób angażujący, budować przekaz i docierać do odbiorców.
+Wierzę, że każdy człowiek ma w sobie zasoby i możliwości, które nie zawsze potrafi dostrzec lub w pełni wykorzystać. Czasem wystarczy jedno pytanie, jedna inspirująca myśl lub spojrzenie na sytuację z innej perspektywy, aby uruchomić proces zmiany. Moją rolą jest tworzenie przestrzeni, w której można odkrywać te możliwości, wzmacniać własną sprawczość i odważniej sięgać po to, co wcześniej wydawało się poza zasięgiem.
 
-Wierzę, że trwała zmiana zaczyna się od świadomości, ale nabiera mocy dopiero wtedy, gdy prowadzi do działania. Dlatego moim celem jest nie tylko inspirować, lecz także pozostawiać uczestników z nową perspektywą i impulsem do rozwoju.
+Pracuję z pasją i wielkim entuzjazmem, cieszy mnie obserwacja procesów zmiany i wzrostu, każdego z kim mam przyjemność pracować. Lubię ludzi i wiem, że odpowiednia motywacja, uznanie i dobre poprowadzenie, przynoszą wspaniałe rezultaty.
+
+Ważnym obszarem mojego doświadczenia jest również praca z głosem, słowem i przekazem. Mam doświadczenie w pracy radiowej, pracy na scenie, nagrywaniu materiałów audio oraz przygotowywaniu treści edukacyjnych. Dzięki temu szczególną uwagę zwracam na sposób komunikowania, budowanie angażującego przekazu i umiejętność docierania do odbiorców. Wierzę, że słowa mają moc – mogą inspirować, zmieniać sposób myślenia, dodawać odwagi i zachęcać do działania.
+
+Bliskie są mi również praktyki wspierające świadomy kontakt ze sobą – joga, praca z oddechem i twórczość, w tym malowanie mandali. Pokazują one, że rozwój nie ogranicza się do zdobywania wiedzy i nowych umiejętności. To także uważność, równowaga, kreatywność i umiejętność dostrzegania własnych potrzeb.
+
+W swojej pracy łączę profesjonalizm z autentycznością, wiedzę z doświadczeniem, a inspirację z praktycznym działaniem. Zależy mi na tym, aby każde spotkanie pozostawiało coś wartościowego – nową perspektywę, ważną refleksję, odkrycie własnych możliwości lub impuls do podjęcia pierwszego kroku.
+
+Wierzę, że trwała zmiana zaczyna się od świadomości, ale nabiera mocy dopiero wtedy, gdy prowadzi do działania.
 
 # Wystąpienia
 
