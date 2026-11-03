@@ -317,7 +317,7 @@ pages:
     title: "Coaching"
     template: "tekstowa"
     eyebrow: "Indywidualny i biznesowy"
-    heading: "Coaching – odkryj możliwości. Wybierz kierunek. Działaj świadomie."
+    heading: "Odkryj możliwości. *Działaj świadomie.*"
     lead: "Czasem nie potrzebujesz gotowych odpowiedzi. Potrzebujesz przestrzeni, by odnaleźć własne."
     image: "coaching-rozmowa-fotele.jpg"
     alt: "Dwie kobiety rozmawiają w fotelach podczas spotkania coachingowego"
@@ -466,11 +466,7 @@ Nie zawsze możemy zmienić okoliczności, w których się znajdujemy. Możemy j
 
 Jeśli czujesz, że jesteś w miejscu, w którym chcesz coś zmienić, rozwinąć lub lepiej zrozumieć — coaching może być początkiem tej drogi.
 
-## AGAMA – motywacja, szkolenia i coaching
-
-### Świadomość. Możliwości. Działanie.
-
-Skontaktuj się ze mną i porozmawiajmy o tym, czego potrzebujesz, aby zrobić kolejny krok.
+[Skontaktuj się ze mną](/#kontakt)
 
 # Mandale
 

@@ -4,6 +4,7 @@
  * Długi tekst: sekcja Markdown w site.md pod nagłówkiem równym tytułowi podstrony („# Coaching”).
  */
 import Photo from "../Photo.astro";
+import CoachingContent from "./CoachingContent.astro";
 import { accentHtml } from "../../lib/accent";
 import type { Page } from "../../lib/site-schema";
 import type { Site } from "../../lib/load-site";
@@ -35,7 +36,11 @@ const offer = page.template === "oferta";
   </div>
 </section>
 
-{(body || page.image) && (
+{page.slug === "coaching" && (
+  <CoachingContent page={page} dir={dir} body={body ?? ""} />
+)}
+
+{page.slug !== "coaching" && (body || page.image) && (
   <section class="section">
     <div class:list={["wrap", page.image ? "ag-split" : "narrow"]}>
       {body && <div class="prose ag-prose" set:html={body} />}
